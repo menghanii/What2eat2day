@@ -1,21 +1,47 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
     <head>
         <title>명한블로그</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+        <link href="http://fonts.googleapis.com/earlyaccess/jejuhallasan.css" rel="stylesheet" type="text/css">     
     </head>
     <body>
-        <div>
-            <h1><a href="">웰컴투마이월드</a></h1>
+        <div class="head">
+            <h1><a href="/">명한블로그</a></h1>
         </div>
 
-        <div>
-            <h2><a href="">경환이 ㅎㅇ</a></h2>
-            <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-        </div>
+        <hr>
 
         <div>
-            <h2><a href="">성휴 ㅎㅇ</a></h2>
-            <img src="https://www.hanyang.ac.kr/news/photo/201601/19653_24662_4713.jpg">
+            <p class="issue">★★★★★ 오늘의 핫이슈! ★★★★★</p>
+            <div class="hyu">
+                <h3 class="issue_title"><a href="https://www.hanyang.ac.kr/web/www/news_all?p_p_id=newsView_WAR_newsportlet&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&p_p_col_id=column-1&p_p_col_count=1&_newsView_WAR_newsportlet_action=view_message&_newsView_WAR_newsportlet_messageId=19653">성휴의 화려했던 과거[[클릭!]]</a></h3>
+                <img src="https://www.hanyang.ac.kr/news/photo/201601/19653_24662_4713.jpg">
+            </div>
         </div>
+        
+        <hr>
+
+        <p class='contents'> 작성글 목록 </p>
+        
+        <div class="content container">
+            <div class="row">
+                <div class="col-md-8">
+                    {% for post in posts %}
+                        <div class="post">
+                            <h1><a href="https://github.com/kyunghwanleethebest">{{ post.title }}</a></h1>
+                            <p>{{ post.text|linebreaksbr }}</p>
+                            <div class="date">
+                                <p>published: {{ post.published_date }}</p>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        
     </body>
 </html>

@@ -1,0 +1,47 @@
+h1 a{
+    color: #FCA205;
+    font-family: 'Jeju Hallasan';
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+.head{
+    text-align: center;
+    font-size: 3rem;
+}
+
+.contents{
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    color: peru;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+.issue{
+    text-align: center;
+    color: red;
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.issue_title{
+    font-size: 2.5rem;
+    color: black;
+}
+
+.hyu{
+    text-align: center;
+}
+
+body{
+    padding-left: 15px; 
+}
+
+img{
+    width: 360px;
+    height: 270px;
+}
