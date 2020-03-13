@@ -33,6 +33,21 @@ a{
     color: black;
 }
 
+.post_title{
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+.post_text{
+    text-align: center;
+    font-size: 20px;
+}
+.date{
+    text-align: center;
+    color: gray;
+    padding-left: 35rem;
+}
+
 .hyu{
     text-align: center;
 }
