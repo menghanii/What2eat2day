@@ -1,21 +1,21 @@
 h1 a{
-    color: #FCA205;
-    font-family: 'Jeju Hallasan';
+    color: black;
+    font-family: 'Noto Sans KR', sans-serif;
 }
 
 .head{
+    padding-top: 15px;
     text-align: center;
-    font-size: 3rem;
-    background-color: darkslategray;
-    color: whitesmoke;
-    font-family: 'Jeju Hallasan';
+    background-color: white;
+    color: black;
+    font-family: 'Indie Flower';
 }
 .button{
-    font-family: 'Hanna';
+    font-family: 'Source Code Pro';
 }
 
 .head_title{
-    font-size: 70px;
+    font-size: 40px;
 }
 .button{
     text-align: center;
@@ -34,6 +34,7 @@ h1 a{
     padding-bottom: 15px;
 }
 .issue{
+    font-family: 'Source Code Pro';
     text-align: center;
     color: red;
     font-size: 3rem;
@@ -41,10 +42,10 @@ h1 a{
 }
 
 .issue_title{
-    font-family: 'Hanna';
+    font-family: 'Nanum Gothic Coding';
     text-align: center;
-    font-size: 2.5rem;
-    color: darkcyan;
+    font-size: 2rem;
+    color: black;
 }
 
 .post_title{
