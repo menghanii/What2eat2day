@@ -1,0 +1,79 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>양경휴의 휴식공간</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+        <link href="http://fonts.googleapis.com/earlyaccess/jejuhallasan.css" rel="stylesheet" type="text/css">     
+        <link href="http://fonts.googleapis.com/earlyaccess/hanna.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    </head>
+    <body>
+        <div class="head">
+            <h1>양.경.휴 블로그</h1>
+        </div>
+
+        <button type="button" class="btn btn-success btn-lg"><a href=https://github.com/menghanii/><strong>명한's Github</strong></button>
+        <button type="button" class="btn btn-danger btn-lg"><a href=https://github.com/kyunghwanleethebest/>경환's Github</button>
+        <button type="button" class="btn btn-warning btn-lg"><a href=https://github.com/FeetCodingHommy/>성휴's Github</button>
+
+        <hr>
+
+        <div>
+            <p class="issue">★★★★★ 오늘의 핫이슈! ★★★★★</p>
+            <div class="content container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="issues">
+                            <a href="https://www.hanyang.ac.kr/web/www/news_all?p_p_id=newsView_WAR_newsportlet&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&p_p_col_id=column-1&p_p_col_count=1&_newsView_WAR_newsportlet_action=view_message&_newsView_WAR_newsportlet_messageId=19653" target="_blank"><h3 class="issue_title">성휴의 화려했던 과거[[클릭!]]</h3></a>
+                            <img src="https://www.hanyang.ac.kr/news/photo/201601/19653_24662_4713.jpg">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="issues">
+                            <h3 class="issue_title">북한산 첫 등반</h3>
+                            <img src="https://m.knps.or.kr/resource/images/renewal/mainvi_121500.jpg">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="issues">
+                            <a href="https://www.sktinsight.com/98231" target="_blank"><h3 class="issue_title">데이터 사이언티스트의 미래는?</h3></a>
+                            <img src="https://s3-ap-northeast-2.amazonaws.com/www.sktinsight.com/wp-content/uploads/2017/11/%EC%95%8C%EC%93%B8%E6%96%B0JOB4%ED%8E%B8_%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%82%AC%EC%9D%B4%EC%96%B8%ED%8B%B0%EC%8A%A4%ED%8A%B8_4.png">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <hr>
+
+        <p class='contents'> [[글 목록]] </p>
+        
+        <div class="content container">
+            <div class="row">
+                <div class="col-md-12">
+                    {% for post in posts %}
+                        <div class="post">
+                            <h1 class="post_title"><a href="{% url 'blog:post_detail' post.id %}" target="_blank">{{ post.title }}</a></h1>
+                            <p class="post_text">{{ post.text|linebreaksbr }}</p>
+                            <p> <img src="{{ post.image.url }}" alt="{{ post.image }}" </p> 
+                            <div class="date">
+                                <p>published: {{ post.created_date }}</p>
+                            </div>
+                            <hr>
+                            <br>
+                        </div>
+                    {% endfor %}
+                </div>
+                    
+                
+            </div>
+        </div>
+    
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    </body>
+</html>
