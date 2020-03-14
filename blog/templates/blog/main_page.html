@@ -64,23 +64,20 @@
         
         <p class="contents"><span>&#x1F437;</span>  짤 목록 <span>&#x1F433;</span> </p>
       </div>  
-        <div class="content container">
-            <div class="row row-cols-4 row-cols-xs-3">
-            
-                    {% for post in posts %}
-                    <div class="col mb-3">
-                    <div class="card" style="width: 100%; border: none;">
-                    {% if post.image.url != None%}              
-                    <a href="{% url 'blog:post_detail' post.id %}"><img src="{{ post.image.url }}" class="card-img-top" width="500" height="300"  alt="{{ post.image }}">
-                    </a>
-                    {% else %}
-                    <a href="{% url 'blog:post_detail' post.id %}"><img src="{% static 'img/yonsei.jpg' %}" class="card-img-top" width="500" height="300"  alt="no-image">
-                    </a>
-                    {% endif %}
+      <div class="content container h-100">
+          <div class="row align-items-center h-100 row-cols-4 row-cols-xs-3">
+                  {% for post in posts %}
+                  <div class="col mb-3">
+                    <div class="card">
+                  {% if post.image.url != None%}              
+                      <a href="{% url 'blog:post_detail' post.id %}"><img src="{{ post.image.url }}" class="card-img-top"  alt="{{ post.image }}"></a>
+                  {% else %}
+                      <a href="{% url 'blog:post_detail' post.id %}"><img src="{% static 'img/yonsei.jpg' %}" class="card-img-top"  alt="no-image"></a>
+                  {% endif %}
                     </div>
-                    </div>
-                    {% endfor %} 
-            </div>
+                  </div>
+                  {% endfor %} 
+          </div>
         </div>
     
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
