@@ -35,14 +35,14 @@
             <!-- The slideshow -->
             <div class="carousel-inner">
               <div class="carousel-item active">
-                <a href=""><img class="center-block img-responsive car" src="{{ last_post.image.url }}" ></a>
+                <a href="{% url 'blog:post_detail' last_post.id %}"><img class="center-block img-responsive car" src="{{ last_post.image.url }}" ></a>
               </div>
               {% for post in posts %}
               {% if forloop.counter > 1 %}
               {% if forloop.counter < 5 %}
               {% if post.image.url != None %}
                 <div class="carousel-item">
-                    <a href=""><img class="center-block img-responsive car" src="{{ post.image.url }}"></a>
+                    <a href="{% url 'blog:post_detail' post.id %}"><img class="center-block img-responsive car" src="{{ post.image.url }}"></a>
                 </div>
               {% endif %}
               {% endif %}
