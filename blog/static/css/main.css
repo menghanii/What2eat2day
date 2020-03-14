@@ -1,3 +1,7 @@
+.body{
+    background-color: rgb(17, 17, 17);
+}
+
 h1 a{
     color: black;
     font-family: 'Noto Sans KR', sans-serif;
@@ -6,7 +10,7 @@ h1 a{
 .head{
     padding-top: 15px;
     text-align: center;
-    color: black;
+    color: whitesmoke;
     font-family: 'Indie Flower';
 }
 
@@ -18,7 +22,7 @@ h1 a{
     text-align: center;
     font-size: 3rem;
     font-weight: bold;
-    color: black;
+    color: thistle;
     padding-top: 15px;
     padding-bottom: 15px;
 }
@@ -40,6 +44,11 @@ h1 a{
 .car{
     height: 500px;
     width: auto;
+}
+
+.card_body{
+    background-color: rgb(17, 17, 17);
+    color: whitesmoke;
 }
 
 .post_title{

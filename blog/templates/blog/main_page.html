@@ -12,7 +12,7 @@
         <link href="http://fonts.googleapis.com/earlyaccess/hanna.css" rel="stylesheet" type="text/css">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     </head>
-    <body background="http://www.fundiaco.ind.br/images/background-patterns/body-bg-1.jpg">
+    <body class="body">
 
         <div class="head">
             <h1 class="head_title">3 coding hommies from YSDA</h1>
@@ -59,16 +59,16 @@
             </a>
           
           </div>
-        <hr>
+        <br>
 
         <p class="contents"><span>&#x1F437;</span>  글 목록 <span>&#x1F433;</span> </p>
         
         <div class="content container">
-            <div class="row row-cols-1 row-cols-md-3">
+            <div class="row row-cols-1 row-cols-md-4">
             
                     {% for post in posts %}
-                    <div class="col mb-4">
-                    <div class="card h-100" style="width: 30rem; border: 1px solid gray;">
+                    <div class="col mb-3">
+                    <div class="card h-100" style="width: 28rem;">
                     {% if post.image.url != None%}              
                     <a href="{% url 'blog:post_detail' post.id %}"><img src="{{ post.image.url }}" class="card-img-top" width="500" height="300" alt="{{ post.image }}">
                     </a>
@@ -76,11 +76,6 @@
                     <a href="{% url 'blog:post_detail' post.id %}"><img src="{% static 'img/yonsei.jpg' %}" class="card-img-top" width="500" height="300" alt="no-image">
                     </a>
                     {% endif %}
-                    <div class="card-body">
-                    <h2 class="card-title" align="center"><strong>{{ post.title }}</strong> </h2>
-                    <br>
-                    <p class="card-text" align="right">{{post.created_date}}</p>
-                    </div>
                     </div>
                     </div>
                     
