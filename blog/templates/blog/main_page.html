@@ -59,35 +59,37 @@
             </a>
           
           </div>
-        <!--
-        <div>
-            
-            <div class="content container">
-                <div class="row">
-                    <div class="col-md-4 col-xs-6"> 
-                        <div class="issues">
-                            <a href="https://www.hanyang.ac.kr/web/www/news_all?p_p_id=newsView_WAR_newsportlet&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&p_p_col_id=column-1&p_p_col_count=1&_newsView_WAR_newsportlet_action=view_message&_newsView_WAR_newsportlet_messageId=19653" target="_blank"><h3 class="issue_title">성휴의 화려했던 과거[[클릭!]]</h3></a>
-                            <img src="https://www.hanyang.ac.kr/news/photo/201601/19653_24662_4713.jpg" class="img-rounded topic">
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-xs-6">
-                        <div class="issues">
-                            <h3 class="issue_title">북한산 첫 등반</h3>
-                            <img src="http://myunghan.pythonanywhere.com/media/KakaoTalk_20200314_025534256_08BzMcC.jpg" class="img-rounded topic">
-                        </div>
-                    </div>
-                    <div class="col-md-4 col-xs-6">
-                        <div class="issues">
-                            <a href=""><h3 class="issue_title">데이터 사이언티스트의 필수역량</h3></a>
-                            <img src="https://cdn.proschoolonline.com/wp-content/uploads/2018/12/data-scientist-musthave-skills-1.jpg" class="img-rounded topic">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        -->
         <hr>
 
+        <p class='contents'> &#x1F437; 글 목록 &#x1F433; </p>
+        
+        <div class="content container">
+            <div class="row row-cols-1 row-cols-md-3">
+            
+                    {% for post in posts %}
+                    <div class="col mb-4">
+                    <div class="card" style="width: 30rem;">
+                    {% if post.image.url != None%}              
+                    <a href="{% url 'blog:post_detail' post.id %}"><img src="{{ post.image.url }}" class="card-img-top" width="500" height="300" alt="{{ post.image }}">
+                    </a>
+                    {% else %}
+                    <a href="{% url 'blog:post_detail' post.id %}"><img src="https://picsum.photos/400/200" class="card-img-top" width="500" height="300" alt="random-image">
+                    </a>
+                    {% endif %}
+                    <div class="card-body">
+                    <h2 class="card-title" align="center"><strong>{{ post.title }}</strong> </h2>
+                    <br>
+                    <p class="card-text" align="right">{{post.created_date}}</p>
+                    </div>
+                    </div>
+                    </div>
+                    
+                    {% endfor %}
+            
+                    
+            </div>
+        </div>
+        <!-- 이전 템플릿입니다.
         <p class='contents'> [[글 목록]] </p>
         
         <div class="content container">
@@ -111,7 +113,7 @@
                     
                 
             </div>
-        </div>
+        </div>-->
     
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
