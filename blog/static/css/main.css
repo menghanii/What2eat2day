@@ -58,8 +58,8 @@ h1 a{
 }
 
 .post_text{
-    padding-left: 20rem;
-    padding-right: 20rem;
+    padding-left: 10em;
+    padding-right: 10em;
     text-justify: auto;
     font-size: 20px;
 }
