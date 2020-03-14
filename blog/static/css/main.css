@@ -6,9 +6,23 @@ h1 a{
 .head{
     text-align: center;
     font-size: 3rem;
-    background-color:royalblue;
+    background-color: darkslategray;
     color: whitesmoke;
     font-family: 'Jeju Hallasan';
+}
+.button{
+    font-family: 'Hanna';
+}
+
+.head_title{
+    font-size: 70px;
+}
+.button{
+    text-align: center;
+}
+
+.button strong{
+    color: whitesmoke;
 }
 
 .contents{
