@@ -53,7 +53,9 @@ h1 a{
 }
 
 .post_text{
-    text-align: center;
+    padding-left: 20rem;
+    padding-right: 20rem;
+    text-justify: auto;
     font-size: 20px;
 }
 
