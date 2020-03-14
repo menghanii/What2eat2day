@@ -12,41 +12,46 @@
         <link href="http://fonts.googleapis.com/earlyaccess/hanna.css" rel="stylesheet" type="text/css">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     </head>
+
     <body class="body">
-
-        <div class="head">
-            <h1 class="head_title">3 coding hommies from YSDA</h1>
-            <br>
-            <div class="button">
-                <button type="button" class="btn btn-success btn-lg"><a href="https://github.com/menghanii/" target="_blank"><span style="font-size: 30px">&#x1F435;</span></a></button>
-                <button type="button" class="btn btn-danger btn-lg"><a href="https://github.com/kyunghwanleethebest/" target="_blank"><span style="font-size: 30px">&#x1F414;</span></a></button>
-                <button type="button" class="btn btn-warning btn-lg"><a href="https://github.com/FeetCodingHommy/" target="_blank"><span style="font-size: 30px">&#x1F437;</span></a></button>
-            </div>
-        </div>
-        <br>
-
-        <div>
-            <p class="issue"> <span id="def">def</span> <span id="topic">Topic</span><span id="today">(Today) : </span></p>
-        </div>
-        <div id="demo" class="carousel slide" data-ride="carousel">
-            <!-- The slideshow -->
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <a href="{% url 'blog:post_detail' last_post.id %}"><img class="center-block img-responsive car" src="{{ last_post.image.url }}" ></a>
-              </div>
-              {% for post in posts %}
-              {% if forloop.counter > 1 %}
-              {% if forloop.counter < 5 %}
-              {% if post.image.url != None %}
-                <div class="carousel-item">
-                    <a href="{% url 'blog:post_detail' post.id %}"><img class="center-block img-responsive car" src="{{ post.image.url }}"></a>
+      <div class="container">
+        <div class="row d-flex justify-content-center">
+          <div class="col-xs-12">
+            <div class="head">
+                <h1 class="head_title">3 coding hommies from YSDA</h1>
+                <br>
+                <div class="button">
+                    <button type="button" class="btn btn-success btn-lg"><a href="https://github.com/menghanii/" target="_blank"><span style="font-size: 30px">&#x1F435;</span></a></button>
+                    <button type="button" class="btn btn-danger btn-lg"><a href="https://github.com/kyunghwanleethebest/" target="_blank"><span style="font-size: 30px">&#x1F414;</span></a></button>
+                    <button type="button" class="btn btn-warning btn-lg"><a href="https://github.com/FeetCodingHommy/" target="_blank"><span style="font-size: 30px">&#x1F437;</span></a></button>
                 </div>
-              {% endif %}
-              {% endif %}
-              {% endif %}
-              {% endfor %}
             </div>
-          
+            <br>
+
+            <div>
+                <p class="issue"> <span id="def">def</span> <span id="topic">Topic</span><span id="today">(Today) : </span></p>
+            </div>
+            <div id="demo" class="carousel slide" data-ride="carousel">
+                <!-- The slideshow -->
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <a href="{% url 'blog:post_detail' last_post.id %}"><img class="center-block img-responsive car" src="{{ last_post.image.url }}" ></a>
+                  </div>
+                  {% for post in posts %}
+                  {% if forloop.counter > 1 %}
+                  {% if forloop.counter < 5 %}
+                  {% if post.image.url != None %}
+                    <div class="carousel-item">
+                        <a href="{% url 'blog:post_detail' post.id %}"><img class="center-block img-responsive car" src="{{ post.image.url }}"></a>
+                    </div>
+                  {% endif %}
+                  {% endif %}
+                  {% endif %}
+                  {% endfor %}
+                </div>
+              </div>
+            </div>
+      
             <!-- Left and right controls -->
             <a class="carousel-control-prev" href="#demo" data-slide="prev">
               <span class="carousel-control-prev-icon"></span>
@@ -58,18 +63,18 @@
           </div>
         
         <p class="contents"><span>&#x1F437;</span>  짤 목록 <span>&#x1F433;</span> </p>
-        
+      </div>  
         <div class="content container">
-            <div class="row row-cols-4 row-cols-xs-4">
+            <div class="row row-cols-4 row-cols-xs-3">
             
                     {% for post in posts %}
-                    <div class="col xs-3">
-                    <div class="card h-100" style="width: 28rem; border: none;">
+                    <div class="col mb-3">
+                    <div class="card" style="width: 100%; border: none;">
                     {% if post.image.url != None%}              
-                    <a href="{% url 'blog:post_detail' post.id %}"><img src="{{ post.image.url }}" class="card-img-top" width="500" height="300" alt="{{ post.image }}">
+                    <a href="{% url 'blog:post_detail' post.id %}"><img src="{{ post.image.url }}" class="card-img-top" width="500" height="300"  alt="{{ post.image }}">
                     </a>
                     {% else %}
-                    <a href="{% url 'blog:post_detail' post.id %}"><img src="{% static 'img/yonsei.jpg' %}" class="card-img-top" width="500" height="300" alt="no-image">
+                    <a href="{% url 'blog:post_detail' post.id %}"><img src="{% static 'img/yonsei.jpg' %}" class="card-img-top" width="500" height="300"  alt="no-image">
                     </a>
                     {% endif %}
                     </div>
