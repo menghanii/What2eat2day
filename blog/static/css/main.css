@@ -23,7 +23,7 @@ h1 a{
     font-size: 3rem;
     font-weight: bold;
     color: thistle;
-    padding-top: 15px;
+    padding-top: 100px;
     padding-bottom: 15px;
 }
 .issue{
@@ -32,6 +32,8 @@ h1 a{
     color: red;
     font-size: 3rem;
     font-weight: bold;
+    padding-top: 40px;
+    padding-bottom: 40px;
 }
 
 .issue_title{
@@ -42,7 +44,7 @@ h1 a{
 }
 
 .car{
-    height: 500px;
+    height: 250px;
     width: auto;
 }
 

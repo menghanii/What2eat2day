@@ -29,9 +29,6 @@
             <p class="issue"> <span id="def">def</span> <span id="topic">Topic</span><span id="today">(Today) : </span></p>
         </div>
         <div id="demo" class="carousel slide" data-ride="carousel">
-
-           
-          
             <!-- The slideshow -->
             <div class="carousel-inner">
               <div class="carousel-item active">
@@ -59,16 +56,15 @@
             </a>
           
           </div>
-        <br>
-
-        <p class="contents"><span>&#x1F437;</span>  글 목록 <span>&#x1F433;</span> </p>
+        
+        <p class="contents"><span>&#x1F437;</span>  짤 목록 <span>&#x1F433;</span> </p>
         
         <div class="content container">
             <div class="row row-cols-1 row-cols-md-4">
             
                     {% for post in posts %}
                     <div class="col mb-3">
-                    <div class="card h-100" style="width: 28rem;">
+                    <div class="card h-100" style="width: 28rem; border: none;">
                     {% if post.image.url != None%}              
                     <a href="{% url 'blog:post_detail' post.id %}"><img src="{{ post.image.url }}" class="card-img-top" width="500" height="300" alt="{{ post.image }}">
                     </a>
@@ -78,37 +74,9 @@
                     {% endif %}
                     </div>
                     </div>
-                    
-                    {% endfor %}
-            
-                    
+                    {% endfor %} 
             </div>
         </div>
-        <!-- 이전 템플릿입니다.
-        <p class='contents'> [[글 목록]] </p>
-        
-        <div class="content container">
-            <div class="row">
-                <div class="col-md-12">
-                    {% for post in posts %}
-                        <div class="post">
-                            <h1 class="post_title"><a href="{% url 'blog:post_detail' post.id %}">&#x2728;  {{ post.title }}  &#x2728;</a></h1>
-                            <p class="post_text">{{ post.text|linebreaksbr }}</p>
-                            {% if post.image.url != None%}
-                            <p class="post_images"><img class="center-block img-responsive" src="{{ post.image.url }}" alt="{{ post.image }}"></p> 
-                            {% endif %}
-                            <div class="date">
-                                <p>published: {{ post.created_date }}</p>
-                            </div>
-                            <hr>
-                            <br>
-                        </div>
-                    {% endfor %}
-                </div>
-                    
-                
-            </div>
-        </div>-->
     
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
