@@ -64,18 +64,21 @@ h1 a{
 .date{
     text-align: center;
     color: gray;
-    padding-left: 35rem;
 }
 
 .issues{
     text-align: center;
 }
 
-img{
+.topic{
     width: 360px;
     height: 270px;
     display: block;
     margin: 0px auto;
+}
+
+img{
+    width:600px;
 }
 
 #def{

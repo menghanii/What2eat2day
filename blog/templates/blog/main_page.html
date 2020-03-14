@@ -32,19 +32,19 @@
                     <div class="col-md-4 col-xs-6"> 
                         <div class="issues">
                             <a href="https://www.hanyang.ac.kr/web/www/news_all?p_p_id=newsView_WAR_newsportlet&p_p_lifecycle=0&p_p_state=normal&p_p_mode=view&p_p_col_id=column-1&p_p_col_count=1&_newsView_WAR_newsportlet_action=view_message&_newsView_WAR_newsportlet_messageId=19653" target="_blank"><h3 class="issue_title">성휴의 화려했던 과거[[클릭!]]</h3></a>
-                            <img src="https://www.hanyang.ac.kr/news/photo/201601/19653_24662_4713.jpg" class="img-rounded">
+                            <img src="https://www.hanyang.ac.kr/news/photo/201601/19653_24662_4713.jpg" class="img-rounded topic">
                         </div>
                     </div>
                     <div class="col-md-4 col-xs-6">
                         <div class="issues">
                             <h3 class="issue_title">북한산 첫 등반</h3>
-                            <img src="http://myunghan.pythonanywhere.com/media/KakaoTalk_20200314_025534256_08BzMcC.jpg" class="img-rounded">
+                            <img src="http://myunghan.pythonanywhere.com/media/KakaoTalk_20200314_025534256_08BzMcC.jpg" class="img-rounded topic">
                         </div>
                     </div>
                     <div class="col-md-4 col-xs-6">
                         <div class="issues">
                             <a href=""><h3 class="issue_title">데이터 사이언티스트의 필수역량</h3></a>
-                            <img src="https://cdn.proschoolonline.com/wp-content/uploads/2018/12/data-scientist-musthave-skills-1.jpg" class="img-rounded">
+                            <img src="https://cdn.proschoolonline.com/wp-content/uploads/2018/12/data-scientist-musthave-skills-1.jpg" class="img-rounded topic">
                         </div>
                     </div>
                 </div>
@@ -60,7 +60,7 @@
                 <div class="col-md-12">
                     {% for post in posts %}
                         <div class="post">
-                            <h1 class="post_title"><a href="{% url 'blog:post_detail' post.id %}">{{ post.title }}</a></h1>
+                            <h1 class="post_title"><a href="{% url 'blog:post_detail' post.id %}">|  {{ post.title }}  |</a></h1>
                             <p class="post_text">{{ post.text|linebreaksbr }}</p>
                             {% if post.image.url != None%}
                             <p class="post_images"><img src="{{ post.image.url }}" alt="{{ post.image }}"></p> 
