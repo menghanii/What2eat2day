@@ -1,13 +1,24 @@
 .head{
     text-align: center;
-    font-size: 3rem;
-    background-color:royalblue;
-    color: whitesmoke;
-    font-family: 'Jeju Hallasan';
+    font-size: 40px;
+    color: black;
+    font-family: 'Indie Flower';
 }
 
 .posting{
     text-align: center;
+}
+
+.to_main{
+    font-family: 'Noto Sans KR', sans-serif;
+    
+}
+.text{
+    font-size: 25px;
+}
+
+ul{
+    list-style: none;
 }
 
 img{

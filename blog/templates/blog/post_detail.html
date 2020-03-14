@@ -6,19 +6,20 @@
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
         <link rel="stylesheet" href="{% static 'css/detail.css' %}">
-        <link href="http://fonts.googleapis.com/earlyaccess/jejuhallasan.css" rel="stylesheet" type="text/css">     
+        <link href="https://fonts.googleapis.com/css?family=Baloo+Bhai+2|Indie+Flower|Nanum+Gothic+Coding|Noto+Sans+KR|Source+Code+Pro&display=swap" rel="stylesheet" type="text/css">    
         <link href="http://fonts.googleapis.com/earlyaccess/hanna.css" rel="stylesheet" type="text/css">
     </head>
-    <body>
+
+    <body background="http://www.fundiaco.ind.br/images/background-patterns/body-bg-1.jpg">
         <div class="head">
-            <h1>양.경.휴 블로그</h1>
+            <h1>3 coding hommies from YSDA</h1>
         </div>
 
-        <hr>
+        <br>
 
 
 <ul class>
-    <li class>
+    <li class="to_main">
         <a href="{% url 'blog:main_page'%}"><strong>메인으로 돌아가기</strong></a>
     </li>
 </ul>
@@ -31,10 +32,10 @@
                 <hr>
 
                 {% comment %} <p>{{post.study_type}}</p> {% endcomment %}
-
+                {% if post.image.url != None%}
                 <p> <img src="{{ post.image.url }}" alt="{{ post.image }}"> </p> 
-
-                <p>{{post.text}}</p>
+                {% endif %}
+                <p class="text">{{post.text}}</p>
             </div>  
         </div>
     </div>
