@@ -5,7 +5,7 @@
         <title>양경휴의 휴식공간</title>
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+        <link rel="stylesheet" href="{% static 'css/detail.css' %}">
         <link href="http://fonts.googleapis.com/earlyaccess/jejuhallasan.css" rel="stylesheet" type="text/css">     
         <link href="http://fonts.googleapis.com/earlyaccess/hanna.css" rel="stylesheet" type="text/css">
     </head>
@@ -23,16 +23,21 @@
     </li>
 </ul>
 
+<div class="content container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="posting">
+                <h1>{{post.title}}</h1>
+                <hr>
 
-<div class>
-    <h1>{{post.title}}</h1>
+                {% comment %} <p>{{post.study_type}}</p> {% endcomment %}
 
-    {% comment %} <p>{{post.study_type}}</p> {% endcomment %}
+                <p> <img src="{{ post.image.url }}" alt="{{ post.image }}"> </p> 
 
-    <p> <img src="{{ post.image.url }}" alt="{{ post.image }}" </p> 
-
-    <p>{{post.text}}</p>
-
+                <p>{{post.text}}</p>
+            </div>  
+        </div>
+    </div>
 </div>
 
 {% comment %} <div>
