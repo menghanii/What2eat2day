@@ -12,46 +12,44 @@
         <link href="http://fonts.googleapis.com/earlyaccess/hanna.css" rel="stylesheet" type="text/css">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     </head>
+    <body background="http://www.fundiaco.ind.br/images/background-patterns/body-bg-1.jpg">
 
-    <body class="body">
-      <div class="container">
-        <div class="row d-flex justify-content-center">
-          <div class="col-xs-12">
-            <div class="head">
-                <h1 class="head_title">3 coding hommies from YSDA</h1>
-                <br>
-                <div class="button">
-                    <button type="button" class="btn btn-success btn-lg"><a href="https://github.com/menghanii/" target="_blank"><span style="font-size: 30px">&#x1F435;</span></a></button>
-                    <button type="button" class="btn btn-danger btn-lg"><a href="https://github.com/kyunghwanleethebest/" target="_blank"><span style="font-size: 30px">&#x1F414;</span></a></button>
-                    <button type="button" class="btn btn-warning btn-lg"><a href="https://github.com/FeetCodingHommy/" target="_blank"><span style="font-size: 30px">&#x1F437;</span></a></button>
-                </div>
-            </div>
+        <div class="head">
+            <h1 class="head_title">3 coding hommies from YSDA</h1>
             <br>
+            <div class="button">
+                <button type="button" class="btn btn-success btn-lg"><a href="https://github.com/menghanii/" target="_blank"><span style="font-size: 30px">&#x1F435;</span></a></button>
+                <button type="button" class="btn btn-danger btn-lg"><a href="https://github.com/kyunghwanleethebest/" target="_blank"><span style="font-size: 30px">&#x1F414;</span></a></button>
+                <button type="button" class="btn btn-warning btn-lg"><a href="https://github.com/FeetCodingHommy/" target="_blank"><span style="font-size: 30px">&#x1F437;</span></a></button>
+            </div>
+        </div>
+        <br>
 
-            <div>
-                <p class="issue"> <span id="def">def</span> <span id="topic">Topic</span><span id="today">(Today) : </span></p>
-            </div>
-            <div id="demo" class="carousel slide" data-ride="carousel">
-                <!-- The slideshow -->
-                <div class="carousel-inner">
-                  <div class="carousel-item active">
-                    <a href="{% url 'blog:post_detail' last_post.id %}"><img class="center-block img-responsive car" src="{{ last_post.image.url }}" ></a>
-                  </div>
-                  {% for post in posts %}
-                  {% if forloop.counter > 1 %}
-                  {% if forloop.counter < 5 %}
-                  {% if post.image.url != None %}
-                    <div class="carousel-item">
-                        <a href="{% url 'blog:post_detail' post.id %}"><img class="center-block img-responsive car" src="{{ post.image.url }}"></a>
-                    </div>
-                  {% endif %}
-                  {% endif %}
-                  {% endif %}
-                  {% endfor %}
-                </div>
+        <div>
+            <p class="issue"> <span id="def">def</span> <span id="topic">Topic</span><span id="today">(Today) : </span></p>
+        </div>
+        <div id="demo" class="carousel slide" data-ride="carousel">
+
+           
+          
+            <!-- The slideshow -->
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <a href="{% url 'blog:post_detail' last_post.id %}"><img class="center-block img-responsive car" src="{{ last_post.image.url }}" ></a>
               </div>
+              {% for post in posts %}
+              {% if forloop.counter > 1 %}
+              {% if forloop.counter < 5 %}
+              {% if post.image.url != None %}
+                <div class="carousel-item">
+                    <a href="{% url 'blog:post_detail' post.id %}"><img class="center-block img-responsive car" src="{{ post.image.url }}"></a>
+                </div>
+              {% endif %}
+              {% endif %}
+              {% endif %}
+              {% endfor %}
             </div>
-      
+          
             <!-- Left and right controls -->
             <a class="carousel-control-prev" href="#demo" data-slide="prev">
               <span class="carousel-control-prev-icon"></span>
@@ -61,24 +59,61 @@
             </a>
           
           </div>
+        <hr>
+
+        <p class="contents"><span>&#x1F437;</span>  글 목록 <span>&#x1F433;</span> </p>
         
-        <p class="contents"><span>&#x1F437;</span>  짤 목록 <span>&#x1F433;</span> </p>
-      </div>  
-      <div class="content container h-100">
-          <div class="row align-items-center h-100 row-cols-4 row-cols-xs-3">
-                  {% for post in posts %}
-                  <div class="col mb-3">
-                    <div class="card">
-                  {% if post.image.url != None%}              
-                      <a href="{% url 'blog:post_detail' post.id %}"><img src="{{ post.image.url }}" class="card-img-top"  alt="{{ post.image }}"></a>
-                  {% else %}
-                      <a href="{% url 'blog:post_detail' post.id %}"><img src="{% static 'img/yonsei.jpg' %}" class="card-img-top"  alt="no-image"></a>
-                  {% endif %}
+        <div class="content container">
+            <div class="row row-cols-1 row-cols-md-3">
+            
+                    {% for post in posts %}
+                    <div class="col mb-4">
+                    <div class="card h-100" style="width: 30rem; border: 1px solid gray;">
+                    {% if post.image.url != None%}              
+                    <a href="{% url 'blog:post_detail' post.id %}"><img src="{{ post.image.url }}" class="card-img-top" width="500" height="300" alt="{{ post.image }}">
+                    </a>
+                    {% else %}
+                    <a href="{% url 'blog:post_detail' post.id %}"><img src="{% static 'img/yonsei.jpg' %}" class="card-img-top" width="500" height="300" alt="no-image">
+                    </a>
+                    {% endif %}
+                    <div class="card-body">
+                    <h2 class="card-title" align="center"><strong>{{ post.title }}</strong> </h2>
+                    <br>
+                    <p class="card-text" align="right">{{post.created_date}}</p>
                     </div>
-                  </div>
-                  {% endfor %} 
-          </div>
+                    </div>
+                    </div>
+                    
+                    {% endfor %}
+            
+                    
+            </div>
         </div>
+        <!-- 이전 템플릿입니다.
+        <p class='contents'> [[글 목록]] </p>
+        
+        <div class="content container">
+            <div class="row">
+                <div class="col-md-12">
+                    {% for post in posts %}
+                        <div class="post">
+                            <h1 class="post_title"><a href="{% url 'blog:post_detail' post.id %}">&#x2728;  {{ post.title }}  &#x2728;</a></h1>
+                            <p class="post_text">{{ post.text|linebreaksbr }}</p>
+                            {% if post.image.url != None%}
+                            <p class="post_images"><img class="center-block img-responsive" src="{{ post.image.url }}" alt="{{ post.image }}"></p> 
+                            {% endif %}
+                            <div class="date">
+                                <p>published: {{ post.created_date }}</p>
+                            </div>
+                            <hr>
+                            <br>
+                        </div>
+                    {% endfor %}
+                </div>
+                    
+                
+            </div>
+        </div>-->
     
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
