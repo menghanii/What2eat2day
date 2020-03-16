@@ -115,6 +115,9 @@ body{
     padding-bottom: 30px;
 }
 
+.card-whole{
+    text-align: center;
+}
 .date{
     color: gray;
 }
