@@ -28,8 +28,11 @@ body{
     font-family: 'Black Han Sans';
     font-size: 100px;
 }
+
+.header .title_small{
+    font-size: 70px;
+}
 .nav_bar{
-    color:whitesmoke;
     text-align: center;
     text-shadow: 1px 1px 0px black;
     font-size: 20px;
@@ -121,3 +124,11 @@ body{
 .date{
     color: gray;
 }
+
+/* Footer */
+.page-footer{
+    text-align: center;
+}
+.page-footer a:link {color: whitesmoke; text-decoration: none;}
+.page-footer a:visited {color: whitesmoke; text-decoration: none;}
+.page-footer a:hover {color: whitesmoke; text-decoration: none;}

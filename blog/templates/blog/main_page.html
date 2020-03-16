@@ -17,20 +17,22 @@
 <!-- HEADER -->
     <div class="col-xs-12">
     <div class="header">
-        <p>오늘 뭐먹지?</p>
+        <p>오<span class="title_small">늘</span> 뭐<span class="title_small">먹지</span>?</p>
     </div>
     </div>
     <!-- 신촌안, 신촌밖 로고부분-->
     <div class="logo">
-        <img src="https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&fname=https%3A%2F%2Fk.kakaocdn.net%2Fdn%2FctocdN%2FbtqBAWoc5kx%2FSUn5JU5g0QIp6WEmm5A541%2Fimg.jpg">
-        <img src="https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&fname=https%3A%2F%2Fk.kakaocdn.net%2Fdn%2FmdQwP%2FbtqByFmNfCu%2FQJakuLT7DsqMa6W9j8kZok%2Fimg.jpg">
+        <!--<img src="https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&fname=https%3A%2F%2Fk.kakaocdn.net%2Fdn%2FctocdN%2FbtqBAWoc5kx%2FSUn5JU5g0QIp6WEmm5A541%2Fimg.jpg">
+        <img src="https://img1.daumcdn.net/thumb/R800x0/?scode=mtistory2&fname=https%3A%2F%2Fk.kakaocdn.net%2Fdn%2FmdQwP%2FbtqByFmNfCu%2FQJakuLT7DsqMa6W9j8kZok%2Fimg.jpg">-->
     </div>
     <!-- 로그인(로그아웃), 회원가입, 글쓰기 -->
     <div class="nav_bar">
         <p>
-            <a href="#"><span>로그인</span><span style="font-size: 10px;">할래요?</span></a>
-            <a href="#"><span>회원가입</span><span style="font-size: 10px;">할래요?</span></a>
-            <a href="#"><span>글쓰기</span><span style="font-size: 10px;">할래요?</span></a>
+            <a href="#"><span style="color:rgb(94, 255, 224);">로그인</span><span style="font-size: 10px;">할래요?</span></a>
+            <!--<a href="#"><span style="color:rgb(94, 255, 224);">로그아웃</span><span style="font-size: 10px;">할래요?</span></a>-->
+            <a href="#"><span style="color:rgb(94, 255, 224);">회원가입</span><span style="font-size: 10px;">할래요?</span></a>
+            <a href="#"><span style="color:rgb(94, 255, 224);">글쓰기</span><span style="font-size: 10px;">할래요?</span></a>
+            <a href="#"><span style="color:rgb(94, 255, 224);">마이페이지</span><span style="font-size: 10px;">갈래요?</span></a>
         </p>
     </div>
     <!-- DROPDOWN AREA-->
@@ -41,8 +43,8 @@
             </a>
         
             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-            <a class="dropdown-item" href="#">신촌 안</a>
-            <a class="dropdown-item" href="#">신촌 밖</a>
+            <a class="dropdown-item" href="#">신촌 안 ?</a>
+            <a class="dropdown-item" href="#">신촌 밖 ?</a>
             </div>
         </div>
     </div>
@@ -90,7 +92,7 @@
 <!-- CARD AREA -->
     <div class="container content">
     <p class="contents">
-    <span>&#x1F437;</span> 모든 맛집 <span>&#x1F437;</span>
+    <span>&#x1F437;</span> 전체 맛집을 보여드릴게요 <span>&#x1F437;</span>
     </p>
     </div>
 <div class="container">
@@ -98,11 +100,11 @@
 	{% for post in posts %}
 	<div class="col mb-4">
         <div class="container card-whole">
-		<div class="card h-100" style="width: 30rem; border: 1.5px solid black; border-radius: 20px;">
+		<div class="card h-100" style="width: 30rem; border: 4px solid red;">
             {% if post.image.url != None%} 
-            <a href="{% url 'blog:post_detail' post.id %}"><img src="{{ post.image.url }}" class="card-img-top" width="500" height="300" alt="{{ post.image }}" style="border-radius: 20px;"></a>
+            <a href="{% url 'blog:post_detail' post.id %}"><img src="{{ post.image.url }}" class="card-img-top" width="40" height="300" alt="{{ post.image }}"></a>
             {% else %} 
-            <a href="{% url 'blog:post_detail' post.id %}"><img src="{% static 'img/yonsei.jpg' %}" class="card-img-top" width="500" height="300" alt="no-image" style="border-radius: 20px;"></a>
+            <a href="{% url 'blog:post_detail' post.id %}"><img src="{% static 'img/yonsei.jpg' %}" class="card-img-top" width="40" height="300" alt="no-image"></a>
 			{% endif %}
 			<div class="card-body card_body">
 			    <h2 class="card-title" align="center"><strong>{{ post.title }}</strong></h2>
@@ -117,11 +119,22 @@
 </div>
 
 <!-- footer -->
-<div class="button">
-    <button type="button" class="btn btn-success btn-lg"><a href="https://github.com/menghanii/" target="_blank"><span style="font-size: 30px">&#x1F435;</span></a></button>
-    <button type="button" class="btn btn-danger btn-lg"><a href="https://github.com/kyunghwanleethebest/" target="_blank"><span style="font-size: 30px">&#x1F414;</span></a></button>
-    <button type="button" class="btn btn-warning btn-lg"><a href="https://github.com/FeetCodingHommy/" target="_blank"><span style="font-size: 30px">&#x1F437;</span></a></button>
-</div>
+<footer class="page-footer font-small">
+    <div class="button">
+        <button type="button" class="btn btn-success"><a href="https://github.com/menghanii/" target="_blank"><span style="font-size: 30px">&#x1F435;</span></a></button>
+        <button type="button" class="btn btn-danger"><a href="https://github.com/kyunghwanleethebest/" target="_blank"><span style="font-size: 30px">&#x1F414;</span></a></button>
+        <button type="button" class="btn btn-warning"><a href="https://github.com/FeetCodingHommy/" target="_blank"><span style="font-size: 30px">&#x1F437;</span></a></button>
+    </div>
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3">menghanii, kyunghwanleethebest, FeetCodingHommy
+    </div>
+    
+    <div class="footer-copyright text-center py-3">© 2020 Copyright
+    </div>
+    <!-- Copyright -->
+  
+  </footer>
+
 
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
