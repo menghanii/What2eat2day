@@ -14,8 +14,7 @@ def main_page(request):
         'posts':posts,
         'last_post':last_post,
         })
-
-
+        
 def post_detail(request, post_id):
     post = get_object_or_404(Post, id=post_id)
     comments = post.comments.all()
