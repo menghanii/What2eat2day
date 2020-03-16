@@ -80,11 +80,11 @@ def create_comment(request, post_id):
     if form.is_valid():
         comment = form.save(commit=False) # 아직 posting_id가 비어있기 때문에, 저장하는 척만 하고 Comment 객체 return
         # comment.article_id = article.id
-        comment.article = post
+        comment.post = post
         comment.author = request.user
         comment.save()
         # article.comments_num +=1
-        # article.save()
+        post.save()
     return redirect('blog:post_detail', post.id)
 
 @login_required
