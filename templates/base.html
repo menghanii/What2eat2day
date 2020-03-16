@@ -3,7 +3,7 @@
 <html>
 
 <head>
-    <link href="{% static 'img/hyu.png' %}" rel="shortcut icon" type="image/x-icon">
+    <link href="{% static 'img/ryan.png' %}" rel="shortcut icon" type="image/x-icon">
     <title>오늘 뭐먹지?</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
@@ -21,7 +21,7 @@
     <!-- HEADER -->
     <div class="col-xs-12">
         <div class="header">
-            <p>오<span class="title_small">늘</span> 뭐<span class="title_small">먹지</span>?</p>
+            <a href="{% url 'blog:main_page' %}"><p>오<span class="title_small">늘</span> 뭐<span class="title_small">먹지</span>?</p></a>
         </div>
     </div>
     <!-- 신촌안, 신촌밖 로고부분-->

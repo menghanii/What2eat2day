@@ -28,6 +28,9 @@ body{
     font-family: 'Black Han Sans';
     font-size: 100px;
 }
+.header a:link {color: red; text-decoration: none;}
+.header a:visited {color: red; text-decoration: none;}
+.header a:hover {color: red; text-decoration: none;}
 
 .header .title_small{
     font-size: 70px;
