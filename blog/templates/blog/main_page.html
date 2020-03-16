@@ -5,7 +5,7 @@
 <head>
     <link href="{% static 'img/ryan.png' %}" rel="shortcut icon" type="image/x-icon">
     <title>오늘 뭐먹지?</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
     <link rel="stylesheet" href="{% static 'css/main.css' %}">
@@ -29,14 +29,13 @@
     <div class="nav_bar">
         <p>
             {% if request.user.is_authenticated %}
-            <a href="{% url 'accounts:accounts_detail' user.id %}"><span style="color:rgb(94, 255, 224);">마이페이지</span><span
-                style="font-size: 10px;">갈래요?</span></a>
-            <a href="{% url 'accounts:logout' %}"><span style="color:rgb(94, 255, 224);">로그아웃</span><span style="font-size: 10px;">할래요?</span></a>
-            <a href="{% url 'blog:main_page' %}"><span style="color:rgb(94, 255, 224);">홈으로</span><span style="font-size: 10px;">고고~</span></a>
-            <a href="{% url 'blog:post_create'%}"><span style="color:rgb(94, 255, 224);">글쓰기</span><span style="font-size: 10px;">할래요?</span></a>
+            <a href="{% url 'accounts:accounts_detail' user.id %}"><span class="middle">마이페이지</span><span class="small">갈래요?</span></a>
+            <a href="{% url 'accounts:logout' %}"><span class="middle">로그아웃</span><span class="small">할래요?</span></a>
+            <a href="{% url 'blog:main_page' %}"><span class="middle">홈으로</span><span class="small">고고~</span></a>
+            <a href="{% url 'blog:post_create'%}"><span class="middle">글쓰기</span><span class="small">할래요?</span></a>
             {% else %}
-            <a href="{% url 'accounts:signup'%}"><span style="color:rgb(94, 255, 224);">회원가입</span><span style="font-size: 10px;">할래요?</span></a>
-            <a href="{% url 'accounts:login' %}"><span style="color:rgb(94, 255, 224);">로그인</span><span style="font-size: 10px;">할래요?</span></a>
+            <a href="{% url 'accounts:signup'%}"><span class="middle">회원가입</span><span class="small">할래요?</span></a>
+            <a href="{% url 'accounts:login' %}"><span class="middle">로그인</span><span class="small">할래요?</span></a>
             {% endif %}                       
         </p>
     </div>
@@ -101,16 +100,16 @@
     <span>&#x1F437;</span> 전체 맛집을 보여드릴게요 <span>&#x1F437;</span>
     </p>
     </div>
-<div class="container-fluid">
-<div class="row row-cols-1 row-cols-md-4">
+<div class="container-fluid" id="yespadding">
+<div class="row row-cols-3 row-cols-md-4 card-col">
 	{% for post in posts %}
-	<div class="col mb-4">
-        <div class="container card-whole h-100">
-		<div class="card h-100" style="width: 30rem;">
+	<div class="col mb-4 nopadding">
+        <div class="card-whole h-100">
+		<div class="card h-100">
             {% if post.image.url != None%} 
-            <a href="{% url 'blog:post_detail' post.id %}"><img src="{{ post.image.url }}" class="card-img-top" width="500" height="300" alt="{{ post.image }}"></a>
+            <a href="{% url 'blog:post_detail' post.id %}"><img src="{{ post.image.url }}" class="card-img-top" alt="{{ post.image }}"></a>
             {% else %} 
-            <a href="{% url 'blog:post_detail' post.id %}"><img src="{% static 'img/yonsei.jpg' %}" class="card-img-top" width="500" height="300" alt="no-image"></a>
+            <a href="{% url 'blog:post_detail' post.id %}"><img src="{% static 'img/yonsei.jpg' %}" class="card-img-top" alt="no-image"></a>
 			{% endif %}
 			<div class="card-body card_body">
 			    <h2 class="card-title" align="center"><strong>{{ post.title }}</strong></h2>
@@ -127,14 +126,13 @@
 <!-- footer -->
 <footer class="page-footer font-small">
     <div class="button">
-        <button type="button" class="btn btn-success"><a href="https://github.com/menghanii/" target="_blank"><span style="font-size: 30px">&#x1F435;</span></a></button>
-        <button type="button" class="btn btn-danger"><a href="https://github.com/kyunghwanleethebest/" target="_blank"><span style="font-size: 30px">&#x1F414;</span></a></button>
-        <button type="button" class="btn btn-warning"><a href="https://github.com/FeetCodingHommy/" target="_blank"><span style="font-size: 30px">&#x1F437;</span></a></button>
+        <button type="button" class="btn btn-success"><a href="https://github.com/menghanii/" target="_blank"><span class="git">&#x1F435;</span></a></button>
+        <button type="button" class="btn btn-danger"><a href="https://github.com/kyunghwanleethebest/" target="_blank"><span class="git">&#x1F414;</span></a></button>
+        <button type="button" class="btn btn-warning"><a href="https://github.com/FeetCodingHommy/" target="_blank"><span class="git">&#x1F437;</span></a></button>
     </div>
     <!-- Copyright -->
     <div class="footer-copyright text-center py-3">menghanii, kyunghwanleethebest, FeetCodingHommy
     </div>
-    
     <div class="footer-copyright text-center py-3">© 2020 Copyright
     </div>
     <!-- Copyright -->

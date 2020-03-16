@@ -1,6 +1,6 @@
 body{
     border-style: solid;
-    border-width: 10px;
+    border-width: 8px;
     border-color: red;
 }
 
@@ -22,19 +22,21 @@ body{
 
 /* HEADER & TITLE  */
 .header{
-    padding-top: 20px;
+    padding-top: 10px;
     color: red;
     text-align: center;
     font-family: 'Black Han Sans';
-    font-size: 100px;
+    font-size: 70px;
 }
+
 .header a:link {color: red; text-decoration: none;}
 .header a:visited {color: red; text-decoration: none;}
 .header a:hover {color: red; text-decoration: none;}
 
 .header .title_small{
-    font-size: 70px;
+    font-size: 45px;
 }
+
 .nav_bar{
     text-align: center;
     text-shadow: 1px 1px 0px black;
@@ -44,6 +46,29 @@ body{
 .nav_bar a:link {color: whitesmoke; text-decoration: none;}
 .nav_bar a:visited {color: whitesmoke; text-decoration: none;}
 .nav_bar a:hover {color: whitesmoke; text-decoration: none;}
+
+.middle{
+    color: rgb(94, 255, 224);
+    font-size: 20px;
+}
+
+.small{
+    color: whitesmoke;
+}
+
+@media (min-width: 812px) {
+    .header{
+        padding-top: 20px;
+        color: red;
+        text-align: center;
+        font-family: 'Black Han Sans';
+        font-size: 100px;
+    }
+    
+    .header .title_small{
+        font-size: 70px;
+        }
+}
 
 .logo{
     text-align: center;
@@ -115,17 +140,77 @@ body{
     border-radius: 20px;
     font-family: 'Black Han Sans';
     text-align: center;
-    font-size: 40px;
+    font-size: 20px;
     color: black;
-    padding-top: 30px;
-    padding-bottom: 30px;
+    padding-top: 15px;
+    padding-bottom: 15px;
 }
 
-.card-whole{
-    text-align: center;
+@media (min-width: 812px){
+    .contents{
+        border: 2px solid black;
+        border-radius: 20px;
+        font-family: 'Black Han Sans';
+        text-align: center;
+        font-size: 40px;
+        color: black;
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
 }
+
+.card-col{
+    width: 100%;
+}
+#yespadding{
+    margin-left: 15px;
+}
+.nopadding{
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+.card-title{
+    font-size: 12px;
+}
+
+.card-img-top{
+    max-width: 500px;
+    height: 100px;
+}
+
+.card_body{
+    padding-bottom: 0 !important;
+}
+
 .date{
-    color: gray;
+    display: none;
+}
+
+@media (min-width: 812px){
+    #yespadding{
+        margin-left:0px;
+        margin-right: 25px;
+    }
+
+    .card-col{
+        width: 1500px;
+    }
+
+    .card-title{
+        font-size: 25px;
+    }
+
+    .card-img-top{
+        max-width: 500px;
+        height: 300px;
+    }
+
+    .date{
+        display: block;
+        color:gray;
+        position: relative;
+    }
 }
 
 /* Footer */
@@ -136,4 +221,12 @@ body{
 .page-footer a:visited {color: whitesmoke; text-decoration: none;}
 .page-footer a:hover {color: whitesmoke; text-decoration: none;}
 
+.git{
+    font-size: 15px;
+}
+@media (min-width: 812px){
+    .git{
+        font-size: 30px;
+    }
+}
 /* login/register */
