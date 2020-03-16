@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block body %}
+<a href="{% url 'blog:main_page'%}">글 목록</a>
+<h1>{{account.real_name}} 님의 작성 글을 봐볼까용?</h1>
+
+
+  <div class="row">
+    {% for post in posts %}
+    <ul>
+        <li><a href="{% url 'blog:post_detail' post.id %}">
+            {{post.title}} </a></li>
+    </ul>
+    {% endfor %}
+  </div>
+{% endblock %}

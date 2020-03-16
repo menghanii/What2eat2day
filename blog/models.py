@@ -3,13 +3,22 @@ from django.db import models
 from django.utils import timezone
 
 
+
 class Post(models.Model):
 
     bulletin_types = {
-        (1, '일상생활'),
-        (2, '코딩일기'),
-        (3, '맛집정보'),
-        (4, '기타 등등'),
+        ('1', '신촌 안'),
+        ('2', '신촌 밖'),
+    }
+
+    menus = {
+        ('ko', '한식'),
+        ('ch', '중식'),
+        ('jp', '일식'),
+        ('bo', '분식'),
+        ('cp', '치킨&피자&햄버거'),
+        ('nh', '야식'),
+        ('et', '기타'),
     }
 
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
@@ -18,7 +27,9 @@ class Post(models.Model):
     created_date = models.DateTimeField(
             default=timezone.now)
     image = models.ImageField(blank=True)
-    # bulletin = models.CharField(max_length=100, choices=bulletin_types)
+    bulletin = models.CharField(max_length=100, choices=bulletin_types)
+    menu = models.CharField(max_length=100, choices=menus)
+    # like_users = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='like_posts')
 
     def __str__(self):
         return self.title
