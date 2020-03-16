@@ -1,60 +1,118 @@
-h1 a{
-    color: black;
-    font-family: 'Noto Sans KR', sans-serif;
+body{
+    border-style: solid;
+    border-width: 10px;
+    border-color: red;
 }
 
 /* DEF TOPIC(TODAY)  */
 #def{
-    color: orange;
+    color: red;
+    font-family: 'Black Han Sans';
 }
 
 #topic{
-    color: rgb(212, 212, 22);
+    color: black;
+    font-family: 'Black Han Sans';
 }
 
 #today{
-    color:rgb(158, 8, 158);
+    color:red;
+    font-family: 'Black Han Sans';
 }
 
 /* HEADER & TITLE  */
-.head{
-    padding-top: 15px;
-    color: black;
-    font-family: 'Indie Flower';
+.header{
+    padding-top: 20px;
+    color: red;
+    text-align: center;
+    font-family: 'Black Han Sans';
+    font-size: 100px;
+}
+.nav_bar{
+    color:whitesmoke;
+    text-align: center;
+    text-shadow: 1px 1px 0px black;
+    font-size: 20px;
+    font-family: 'Black Han Sans';
+}
+.nav_bar a:link {color: whitesmoke; text-decoration: none;}
+.nav_bar a:visited {color: whitesmoke; text-decoration: none;}
+.nav_bar a:hover {color: whitesmoke; text-decoration: none;}
+
+.logo{
     text-align: center;
 }
 
-.head_title{
-    font-size: 40px;
+.logo img{
+    width: 200px;
+    height: auto;
 }
 
-.button{
+.drop{
     text-align: center;
+}
+
+.dropdown-toggle {
+    background-color: red !important;
+    color: white !important;
+    width: 300px !important;
+    height: 50px !important;
+    font-size: 30px !important;;
+    font-family: 'Black Han Sans';
+}
+
+.dropdown-toggle::after{
+    content: none;
+}
+
+.dropdown-item{
+    color: red !important;
+    width: 300px !important;
+    height: 50px !important;
+    font-size: 30px !important;
+    font-family: 'Black Han Sans';
+    text-align: center !important;
 }
 
 /* CAROUSEL AREA */
+.today{
+    font-size: 40px;
+    text-shadow:
+    -2px -2px 0 yellow,
+    2px -2px 0 yellow,
+    -2px 2px 0 yellow,
+    2px 2px 0 yellow; 
+}
 .issue{
     font-family: 'Source Code Pro';
     text-align: center;
     font-size: 3rem;
     font-weight: bold;
-    text-shadow: 1px 1px 0px black;
+    
     padding-top: 30px;
 }
 
 .car{
-    height: 400px;
+    height: 250px;
     width: auto;
 }
 
 /* CARD AREA(CONTENTS) */
+
+.content{
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
 .contents{
+    border: 2px solid black;
+    border-radius: 20px;
+    font-family: 'Black Han Sans';
     text-align: center;
-    font-size: 3rem;
-    font-weight: bold;
+    font-size: 40px;
     color: black;
     padding-top: 30px;
-    padding-bottom: 15px;
+    padding-bottom: 30px;
 }
 
 .date{
