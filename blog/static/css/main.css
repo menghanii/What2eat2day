@@ -230,3 +230,63 @@ body{
     }
 }
 /* login/register */
+
+/* //////POST_DETAIL////// */
+.return{
+    text-align: left;
+    font-size: 10px;
+}
+
+.post{
+    text-align: center;
+}
+
+.post h1{
+    font-size: 30px;
+}
+
+.post .post-text{
+    text-align: justify;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 15px;
+}
+.post img{
+    max-width: 350px;
+    height:auto;
+}
+
+input[type="submit"]{
+    background-color: white;
+}
+
+.comment{
+    text-align: center;
+}
+
+.carousel-control-prev-icon{
+    outline: black;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+.carousel-control-next-icon{
+        
+}
+@media (min-width: 812px){
+    .return{
+        font-size: 15px;
+    }
+
+    .post img{
+        max-width: 500px;
+        height: auto;
+    }
+
+    .post .post-text{
+        text-align: justify;
+        padding-top: 30px;
+        padding-left: 50px;
+        padding-right: 50px;
+        font-size: 20px;
+    }
+}
