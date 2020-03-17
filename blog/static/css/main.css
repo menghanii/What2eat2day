@@ -255,11 +255,13 @@ body{
 }
 
 .post{
+    padding-top: 10px;
     text-align: center;
 }
 
 .post h1{
     font-size: 30px;
+    font-weight: bold;
 }
 
 .post .post-text{
