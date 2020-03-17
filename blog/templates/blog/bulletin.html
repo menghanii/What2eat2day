@@ -5,14 +5,15 @@
 <!-- DROPDOWN AREA-->
 <div class="drop">
     <div class="dropdown show">
-        <a class="btn btn-lg dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        어디서 먹어요?
+        <a class="btn btn-lg dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            어디서 먹어요?
         </a>
-    
+
         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-        <a class="dropdown-item" href="{% url 'blog:main_page'%}">전체 ?</a>
-        <a class="dropdown-item" href="{% url 'blog:bulletin_1'%}">신촌 안 ?</a>
-        <a class="dropdown-item" href="{% url 'blog:bulletin_2'%}">신촌 밖 ?</a>
+            <a class="dropdown-item" href="{% url 'blog:main_page'%}">전체 ?</a>
+            <a class="dropdown-item" href="{% url 'blog:bulletin_1'%}">신촌 안 ?</a>
+            <a class="dropdown-item" href="{% url 'blog:bulletin_2'%}">신촌 밖 ?</a>
         </div>
     </div>
 </div>
@@ -20,60 +21,62 @@
 <!-- CARD AREA -->
 <div class="container content">
     <p class="contents">
-    <span>&#x1F437;</span> {{ name }} 맛집을 보여드릴게요 <span>&#x1F437;</span><br>
-    <span class= "menubar">
-        <div class="form-check form-check-inline">
-        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-        <label class="form-check-label" for="inlineCheckbox1">한</label>
-        </div>
-        <div class="form-check form-check-inline">
-        <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-        <label class="form-check-label" for="inlineCheckbox2">중</label>
-        </div>
-        <div class="form-check form-check-inline">
-        <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
-        <label class="form-check-label" for="inlineCheckbox3">일</label>
-        </div>
-        <div class="form-check form-check-inline">
-        <input class="form-check-input" type="checkbox" id="inlineCheckbox4" value="option4">
-        <label class="form-check-label" for="inlineCheckbox4">야식</label>
-        </div>
-        <div class="form-check form-check-inline">
-        <input class="form-check-input" type="checkbox" id="inlineCheckbox5" value="option5">
-        <label class="form-check-label" for="inlineCheckbox5">분식</label>
-        </div>
-        <div class="form-check form-check-inline">
-        <input class="form-check-input" type="checkbox" id="inlineCheckbox6" value="option6">
-        <label class="form-check-label" for="inlineCheckbox6">&#x1F357;&#x1F355;&#x1F354;</label>
-        </div>
-        <div class="form-check form-check-inline">
-        <input class="form-check-input" type="checkbox" id="inlineCheckbox7" value="option7">
-        <label class="form-check-label" for="inlineCheckbox7">기타</label>
-        </div>
-    </span>
+        <span>&#x1F437;</span> {{ name }} 맛집을 보여드릴게요 <span>&#x1F437;</span><br>
+        <span class="menubar">
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                <label class="form-check-label" for="inlineCheckbox1">한</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                <label class="form-check-label" for="inlineCheckbox2">중</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3">
+                <label class="form-check-label" for="inlineCheckbox3">일</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox4" value="option4">
+                <label class="form-check-label" for="inlineCheckbox4">야식</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox5" value="option5">
+                <label class="form-check-label" for="inlineCheckbox5">분식</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox6" value="option6">
+                <label class="form-check-label" for="inlineCheckbox6">&#x1F357;&#x1F355;&#x1F354;</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" id="inlineCheckbox7" value="option7">
+                <label class="form-check-label" for="inlineCheckbox7">기타</label>
+            </div>
+        </span>
     </p>
-    </div>
+</div>
 
 <div class="container-fluid" id="yespadding">
     <div class="row row-cols-3 row-cols-md-4 card-col">
         {% for post in posts %}
         <div class="col mb-4 nopadding">
             <div class="card-whole h-100">
-            <div class="card h-100">
-                {% if post.image.url != None%} 
-                <a href="{% url 'blog:post_detail' post.id %}"><img src="{{ post.image.url }}" class="card-img-top" alt="{{ post.image }}"></a>
-                {% else %} 
-                <a href="{% url 'blog:post_detail' post.id %}"><img src="{% static 'img/yonsei.jpg' %}" class="card-img-top" alt="no-image"></a>
-                {% endif %}
-                <div class="card-body card_body">
-                    <h2 class="card-title" align="center"><strong>{{ post.title }}</strong></h2>
-                    <br>
-                    <p class="card-text date" align="right">{{post.created_date}}</p>
+                <div class="card h-100">
+                    {% if post.image.url != None%}
+                    <a href="{% url 'blog:post_detail' post.id %}"><img src="{{ post.image.url }}" class="card-img-top"
+                            alt="{{ post.image }}"></a>
+                    {% else %}
+                    <a href="{% url 'blog:post_detail' post.id %}"><img src="{% static 'img/yonsei.jpg' %}"
+                            class="card-img-top" alt="no-image"></a>
+                    {% endif %}
+                    <div class="card-body card_body">
+                        <h2 class="card-title" align="center"><strong>{{ post.title }}</strong></h2>
+                        <br>
+                        <p class="card-text date" align="right">{{post.created_date}}</p>
+                    </div>
                 </div>
-            </div>
             </div>
         </div>
         {% endfor %}
     </div>
-    </div>
+</div>
 {% endblock %}
