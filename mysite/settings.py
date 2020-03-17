@@ -32,6 +32,7 @@ CKEDITOR_UPLOAD_PATH = "uploads/"
 # Application definition
 
 INSTALLED_APPS = [
+    'ckeditor_upload',
     'ckeditor',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -131,4 +132,4 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 AUTH_USER_MODEL = 'accounts.User'
 
-CKEDITOR_UPLOAD_PATH = "static/ckeditor/"
+CKEDITOR_UPLOAD_PATH = "uploads/"
