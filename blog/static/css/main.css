@@ -4,7 +4,10 @@ body{
     border-color: red;
 }
 
-/* DEF TOPIC(TODAY)  */
+.shadowy{
+    text-shadow: 2px 2px 0px black;
+}
+/* 오늘의 추천맛집  */
 #def{
     color: red;
     font-family: 'Black Han Sans';
@@ -146,6 +149,20 @@ body{
     padding-bottom: 15px;
 }
 
+.menubar{
+    text-align: center;
+    font-size: 20px;
+}
+
+.search{
+    padding-left: 20px;
+}
+
+.search button{
+    font-size: 15px;
+    font-weight: bold;
+}
+
 @media (min-width: 812px){
     .contents{
         border: 2px solid black;
@@ -159,12 +176,11 @@ body{
     }
 }
 
-.card-col{
-    width: 100%;
+#card-col{
+    margin-left: 0.3px;
+    margin-right: 0.3px;
 }
-#yespadding{
-    margin-left: 15px;
-}
+
 .nopadding{
     padding-left: 0 !important;
     padding-right: 0 !important;
@@ -193,8 +209,9 @@ body{
         margin-right: 25px;
     }
 
-    .card-col{
-        width: 1500px;
+    #card-col{
+        padding-left: 40px;
+        padding-right: 40px;
     }
 
     .card-title{
@@ -264,8 +281,6 @@ input[type="submit"]{
 .comment{
     text-align: center;
 }
-
-.form-check-label
 
 @media (min-width: 812px){
     .return{

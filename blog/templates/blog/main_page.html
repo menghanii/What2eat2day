@@ -17,7 +17,7 @@
 <!-- HEADER -->
     <div class="col-xs-12">
     <div class="header">
-        <p>오<span class="title_small">늘</span> 뭐<span class="title_small">먹지</span>?</p>
+        <p><span class="shadowy">오</span><span class="title_small">늘</span> <span class="shadowy">뭐</span><span class="title_small">먹지</span>?</p>
     </div>
     </div>
     <!-- 신촌안, 신촌밖 로고부분-->
@@ -57,7 +57,7 @@
 <!-- CAROUSEL AREA-->
 <div class="issue">
 	<p class="today">
-		<span id="def">오늘의 </span><span id="topic">추천 </span><span id="today">맛집 </span>
+		<span id="def">오늘의 </span><span id="topic">추천</span><span id="today">맛집!</span>
 	</p>
 </div>
 
@@ -98,7 +98,7 @@
     <div class="container content">
     <p class="contents">
     <span>&#x1F437;</span> 전체 맛집을 보여드릴게요 <span>&#x1F437;</span><br>
-    <div class= "menubar">
+    <div class="menubar">
         <div class="form-check form-check-inline">
         <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
         <label class="form-check-label" for="inlineCheckbox1">한</label>
@@ -126,13 +126,17 @@
         <div class="form-check form-check-inline">
         <input class="form-check-input" type="checkbox" id="inlineCheckbox7" value="option7">
         <label class="form-check-label" for="inlineCheckbox7">기타</label>
+        <span class="search">
+        <button type="button" class="btn btn-outline-danger">찾아줘!</button>
+        </span>
         </div>
+
     </div>
     </p>
     </div>
     
 <div class="container-fluid" id="yespadding">
-<div class="row row-cols-3 row-cols-md-4 card-col">
+<div class="row row-cols-3 row-cols-md-4" id="card-col">
 	{% for post in posts %}
 	<div class="col mb-4 nopadding">
         <div class="card-whole h-100">
