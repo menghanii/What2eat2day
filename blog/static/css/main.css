@@ -300,13 +300,12 @@ input[type="submit"]{
         font-size: 20px;
     }
 }
-
-.form-horizontal {
-    margin-top: 10px;
-    margin-left: 450px;
-    margin-bottom: 100px;
+.form-horizontal{
+    margin-top: 5px;
+    margin-left: 50px;
+    margin-bottom: 10px;
     padding: 20px 20px 0;
-  }
+}
 
 .back-to-top{
     position: fixed;
@@ -324,6 +323,13 @@ input[type="submit"]{
 }
 
 @media (min-width:812px){
+    .form-horizontal {
+        margin-top: 10px;
+        margin-left: 450px;
+        margin-bottom: 100px;
+        padding: 20px 20px 0;
+      }
+
     .back-to-top{
         position: fixed;
         /* position 적용할 위치를 선언해줘야 함 */
