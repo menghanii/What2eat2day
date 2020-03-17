@@ -101,6 +101,22 @@ def delete_comment(request, post_id, comment_id):
     return redirect('blog:post_detail', comment.post.id)
 
 
+def bulletin_1(request):
+    posts = Post.objects.filter(bulletin='1')
+    name = '신촌'
+    return render(request, 'blog/bulletin.html', {
+        'name':name,
+        'posts':posts,
+        })
+
+def bulletin_2(request):
+    posts = Post.objects.filter(bulletin='2')
+    name = '신촌 밖'
+    return render(request, 'blog/bulletin.html', {
+        'name':name,
+        'posts':posts,
+        })
+
 # @login_required
 # # @require_POST
 # def toggle_like(request, post_id):
