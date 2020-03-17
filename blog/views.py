@@ -102,7 +102,7 @@ def delete_comment(request, post_id, comment_id):
 
 
 def bulletin_1(request):
-    posts = Post.objects.filter(bulletin='1')
+    posts = Post.objects.filter(bulletin='1').order_by('-created_date')
     name = '신촌'
     return render(request, 'blog/bulletin.html', {
         'name':name,
@@ -110,7 +110,7 @@ def bulletin_1(request):
         })
 
 def bulletin_2(request):
-    posts = Post.objects.filter(bulletin='2')
+    posts = Post.objects.filter(bulletin='2').order_by('-created_date')
     name = '신촌 밖'
     return render(request, 'blog/bulletin.html', {
         'name':name,
