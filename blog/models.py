@@ -26,7 +26,10 @@ class Post(models.Model):
     text = models.TextField()
     created_date = models.DateTimeField(
             default=timezone.now)
-    image = models.ImageField(blank=True)
+    image = models.ImageField(blank=False)
+    image_2 = models.ImageField(blank=True)
+    image_3 = models.ImageField(blank=True)
+    image_4 = models.ImageField(blank=True)
     bulletin = models.CharField(max_length=100, choices=bulletin_types)
     menu = models.CharField(max_length=100, choices=menus)
     # like_users = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='like_posts')
