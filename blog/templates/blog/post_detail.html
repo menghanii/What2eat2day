@@ -63,7 +63,7 @@
 <div class="container comment">
     <form action="{% url 'blog:create_comment' post.id %}" method="POST">
         {% csrf_token %}
-        <label for="comment"><strong>{{user}} 님</strong>, 한줄 평을 남겨보아요~</label>
+        <label for="comment"><strong>{{user.real_name}} 님</strong>, 한줄 평을 남겨보아요~</label>
         <!-- 코멘트 등록버튼 누르면 등록되게끔 연결좀 시켜주세용 ㅎㅎㅎ-->
         <div class="input-group mb-3">
             <input type="text" class="form-control" name="content" id="comment" placeholder="이곳이 어떠셨나요?" aria-label="후기" aria-describedby="basic-addon2" autofocus>

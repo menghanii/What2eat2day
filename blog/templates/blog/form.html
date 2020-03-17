@@ -2,12 +2,12 @@
 
 {% block body %}
 
-<form method="POST" enctype="multipart/form-data">
+<form class="form-horizontal" method="POST" enctype="multipart/form-data">
 
 {% csrf_token %}
 
 {{form.as_p}}
-<input type="submit">
+<input type="submit" style="width:75; font-family:돋움; background-color:#eff7f9; border:1 solid #A0DBE4">
 
 </form>
 

@@ -1,10 +1,10 @@
 {% extends 'base.html' %}
 {% block body %}
-<form method="POST">
+<form class="form-horizontal" method="POST">
     {% csrf_token %}
 
     {{form.as_p}}
-    <input type="submit">
+    <input type="submit" style="width:100; font-family:돋움; background-color:#eff7f9; border:1 solid #A0DBE4">
 
 </form>
 {% endblock %}

@@ -133,7 +133,6 @@ body{
 .content{
     padding-top: 30px;
     padding-bottom: 30px;
-    text-align: center;
 }
 
 .contents{
@@ -157,11 +156,6 @@ body{
         color: black;
         padding-top: 30px;
         padding-bottom: 30px;
-    }
-
-    .form-check-label{
-        font-size: 20px;
-    }
     }
 }
 
@@ -271,13 +265,10 @@ input[type="submit"]{
     text-align: center;
 }
 
-.carousel-control-prev-icon{
-    outline: black;
-    background-color: rgba(0, 0, 0, 0.3);
+#menubar{
+    text-align: center;
 }
-.carousel-control-next-icon{
-        
-}
+
 @media (min-width: 812px){
     .return{
         font-size: 15px;
@@ -296,3 +287,10 @@ input[type="submit"]{
         font-size: 20px;
     }
 }
+
+.form-horizontal {
+    margin-top: 10px;
+    margin-left: 450px;
+    margin-bottom: 100px;
+    padding: 20px 20px 0;
+  }
