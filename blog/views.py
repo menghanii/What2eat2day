@@ -8,8 +8,11 @@ from .models import Post, Comment
 # from django.http import JsonResponse, HttpResponseBadRequest
 
 def main_page(request):
+    menu_type = request.POST.get('menu')
     posts = Post.objects.all().order_by('-created_date')
     last_post = Post.objects.order_by('created_date').last()
+    if menu_type:
+        posts = posts.filter(menu=menu_type)
     return render(request, 'blog/main_page.html', {
         'posts':posts,
         'last_post':last_post,
@@ -104,6 +107,9 @@ def delete_comment(request, post_id, comment_id):
 def bulletin_1(request):
     posts = Post.objects.filter(bulletin='1').order_by('-created_date')
     name = '신촌'
+    menu_type = request.POST.get('menu')
+    if menu_type:
+        posts = posts.filter(menu=menu_type)
     return render(request, 'blog/bulletin.html', {
         'name':name,
         'posts':posts,
@@ -112,6 +118,9 @@ def bulletin_1(request):
 def bulletin_2(request):
     posts = Post.objects.filter(bulletin='2').order_by('-created_date')
     name = '신촌 밖'
+    menu_type = request.POST.get('menu')
+    if menu_type:
+        posts = posts.filter(menu=menu_type)
     return render(request, 'blog/bulletin.html', {
         'name':name,
         'posts':posts,
