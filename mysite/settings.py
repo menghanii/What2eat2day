@@ -32,7 +32,7 @@ CKEDITOR_UPLOAD_PATH = "uploads/"
 # Application definition
 
 INSTALLED_APPS = [
-    'ckeditor_upload',
+    'ckeditor_uploader',
     'ckeditor',
     'django.contrib.admin',
     'django.contrib.auth',
