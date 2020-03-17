@@ -133,6 +133,7 @@ body{
 .content{
     padding-top: 30px;
     padding-bottom: 30px;
+    text-align: center;
 }
 
 .contents{
@@ -156,6 +157,11 @@ body{
         color: black;
         padding-top: 30px;
         padding-bottom: 30px;
+    }
+
+    .form-check-label{
+        font-size: 20px;
+    }
     }
 }
 
