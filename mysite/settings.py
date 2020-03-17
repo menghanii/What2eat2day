@@ -27,7 +27,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1', '.pythonanywhere.com']
 
-CKEDITOR_UPLOAD_PATH = "uploads/"
 
 # Application definition
 
