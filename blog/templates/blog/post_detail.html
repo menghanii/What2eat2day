@@ -76,7 +76,7 @@
     <div>
         {% if comments %}
         {% for comment in comments  %}
-        <span>{{comment.author}} : {{comment.content}} </span> 
+        <span>{{comment.author.real_name}} : {{comment.content}} </span> 
         <span><a href="{% url 'blog:post_delete' post.id %} " method="POST">
             <button>삭제</button>
         </a></span>
