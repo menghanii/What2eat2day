@@ -265,9 +265,7 @@ input[type="submit"]{
     text-align: center;
 }
 
-#menubar{
-    text-align: center;
-}
+.form-check-label
 
 @media (min-width: 812px){
     .return{
