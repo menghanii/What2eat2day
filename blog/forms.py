@@ -6,7 +6,7 @@ from ckeditor_uploader.widgets import CKEditorUploadingWidget
 class PostModelForm(forms.ModelForm):
     class Meta:
         model = Post
-        fields = ('title', 'bulletin', 'menu', 'image', 'image_2', 'image_3', 'image_4', 'text',)
+        fields = ['title', 'bulletin', 'menu', 'image', 'image_2', 'image_3', 'image_4', 'text',]
 
         widgets = {
             'title': forms.TextInput(
