@@ -3,5 +3,5 @@ from django.contrib.auth.models import AbstractUser
 from django.conf import settings
 
 class User(AbstractUser):
-    real_name = models.CharField(max_length=20)
+    real_name = models.CharField(max_length=20, blank=False)
     # fans = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='stars', blank=True)
