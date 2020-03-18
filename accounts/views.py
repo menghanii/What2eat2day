@@ -53,9 +53,11 @@ def logout(request):
 def accounts_detail(request, user_id):
     account = get_object_or_404(User, id=user_id)
     posts = Post.objects.filter(author=account).order_by('-created_date')
+    likes = Post.objects.filter(like_users=account).order_by('-created_date')
     return render(request, 'accounts/accounts_detail.html', {
         'account':account,
         'posts':posts,
+        'likes': likes,
 
     })
 

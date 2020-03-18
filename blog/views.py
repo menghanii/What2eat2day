@@ -126,22 +126,13 @@ def bulletin_2(request):
         'posts':posts,
         })
 
-# @login_required
-# # @require_POST
-# def toggle_like(request, post_id):
-#     if request.is_ajax:
-#         post = get_object_or_404(Post, id=post_id)
-#         user = request.user
-
-#         # 좋아요를 누른 user 라면,
-#         if post.like_users.filter(id=user.id).exists():
-#             post.like_users.remove(user)
-#             liked = False
-#         else:
-#             post.like_users.add(user)
-#             liked = True
-    
-#         context = {'liked': liked, 'post_id': post.id, 'user_id': user.id}
-#         return JsonResponse(context)
-#     else:
-#         return HttpResponseBadRequest()
+@login_required
+def like(request, post_id):
+    post = get_object_or_404(Post, id=post_id)
+    user = request.user
+    # if article.like_users.filter(id=user.id).exists():
+    if user in post.like_users.all(): # 이미좋아요 상태
+        post.like_users.remove(user) # 고로 지움
+    else:
+        post.like_users.add(user)
+    return redirect('blog:post_detail', post.id)

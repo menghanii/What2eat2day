@@ -1,9 +1,43 @@
 {% extends 'base.html' %}
-{% load static %} 
+{% load static %}
 {% block body %}
 
 <div class="container articles">
-<p class="article">우와~ {{account.real_name}}님이 써주신 글이에요!</p>
+    <p class="article"> {{account.real_name}}님이 관심있는 글이에요!</p>
+</div>
+
+
+<div class="container-fluid" id="yespadding">
+    <div class="row row-cols-3 row-cols-md-4" id="card-col">
+        {% for like in likes %}
+        {% if like.author != account %}
+        <div class="col mb-4 nopadding">
+            <div class="card-whole h-100">
+                <div class="card h-100">
+                    {% if like.image.url != None%}
+                    <a href="{% url 'blog:post_detail' like.id %}"><img src="{{ like.image.url }}" class="card-img-top"
+                            alt="{{ post.image }}"></a>
+                    {% else %}
+                    <a href="{% url 'blog:post_detail' like.id %}"><img src="{% static 'img/yonsei.jpg' %}"
+                            class="card-img-top" alt="no-image"></a>
+                    {% endif %}
+                    <div class="card-body card_body">
+                        <h2 class="card-title" align="center"><strong>{{ like.title }}</strong></h2>
+                        <br>
+                        <p class="card-text date" align="right">{{like.created_date}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+        {% endfor %}
+    </div>
+</div>
+
+<hr>
+
+<div class="container articles">
+    <p class="article">우와~ {{account.real_name}}님이 써주신 글이에요!</p>
 </div>
 
 
@@ -12,21 +46,23 @@
         {% for post in posts %}
         <div class="col mb-4 nopadding">
             <div class="card-whole h-100">
-            <div class="card h-100">
-                {% if post.image.url != None%} 
-                <a href="{% url 'blog:post_detail' post.id %}"><img src="{{ post.image.url }}" class="card-img-top" alt="{{ post.image }}"></a>
-                {% else %} 
-                <a href="{% url 'blog:post_detail' post.id %}"><img src="{% static 'img/yonsei.jpg' %}" class="card-img-top" alt="no-image"></a>
-                {% endif %}
-                <div class="card-body card_body">
-                    <h2 class="card-title" align="center"><strong>{{ post.title }}</strong></h2>
-                    <br>
-                    <p class="card-text date" align="right">{{post.created_date}}</p>
+                <div class="card h-100">
+                    {% if post.image.url != None%}
+                    <a href="{% url 'blog:post_detail' post.id %}"><img src="{{ post.image.url }}" class="card-img-top"
+                            alt="{{ post.image }}"></a>
+                    {% else %}
+                    <a href="{% url 'blog:post_detail' post.id %}"><img src="{% static 'img/yonsei.jpg' %}"
+                            class="card-img-top" alt="no-image"></a>
+                    {% endif %}
+                    <div class="card-body card_body">
+                        <h2 class="card-title" align="center"><strong>{{ post.title }}</strong></h2>
+                        <br>
+                        <p class="card-text date" align="right">{{post.created_date}}</p>
+                    </div>
                 </div>
-            </div>
             </div>
         </div>
         {% endfor %}
     </div>
-    </div>
+</div>
 {% endblock %}
