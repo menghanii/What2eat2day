@@ -35,6 +35,7 @@ class Post(models.Model):
     bulletin = models.CharField(max_length=100, choices=bulletin_types)
     menu = models.CharField(max_length=100, choices=menus)
     like_users = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='like_posts')
+    address = models.CharField(max_length=300)
 
     def __str__(self):
         return self.title

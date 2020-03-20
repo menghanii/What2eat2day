@@ -11,19 +11,19 @@
         <span><a href="{% url 'blog:post_delete' post.id %} " method="POST">
                 <button type="button" class="btn btn-light" style="font-size: 15px; font-weight: bold;">삭제</button>
             </a></span>
-        
+
         <span><a href="{% url 'blog:like' post.id %}">
-            
-            {% if request.user in post.like_users.all %}
-            
-            <button type="button" class="btn btn-light" style="font-size: 15px; font-weight: bold;">좋아요 취소</button>
-            {% else %}
-            
-            <button type="button" class="btn btn-light" style="font-size: 15px; font-weight: bold;">좋아요</button>
-            
-            {% endif%}
-            
-            </a></span> 
+
+                {% if request.user in post.like_users.all %}
+
+                <button type="button" class="btn btn-light" style="font-size: 15px; font-weight: bold;">좋아요 취소</button>
+                {% else %}
+
+                <button type="button" class="btn btn-light" style="font-size: 15px; font-weight: bold;">좋아요</button>
+
+                {% endif%}
+
+            </a></span>
 
         <hr>
 
@@ -68,6 +68,10 @@
     </div>
 </div>
 
+
+<div id="map" style="width:80%;height:300px; margin:100px;"></div>
+
+
 <hr>
 
 <div class="container comment">
@@ -76,31 +80,40 @@
         <label for="comment"><strong>{{user.real_name}} 님</strong>, 한줄 평을 남겨보아요~</label>
         <!-- 코멘트 등록버튼 누르면 등록되게끔 연결좀 시켜주세용 ㅎㅎㅎ-->
         <div class="input-group mb-3">
-            <input type="text" class="form-control" name="content" id="comment" placeholder="이곳이 어떠셨나요?" aria-label="후기" aria-describedby="basic-addon2" autofocus>
+            <input type="text" class="form-control" name="content" id="comment" placeholder="이곳이 어떠셨나요?" aria-label="후기"
+                aria-describedby="basic-addon2" autofocus>
             <div class="input-group-append">
-              <button class="btn btn-outline-secondary" style="font-weight: bold;">등록!</button>
+                <button class="btn btn-outline-secondary" style="font-weight: bold;">등록!</button>
             </div>
-          </div>
+        </div>
     </form>
 
     <div>
         {% if comments %}
         {% for comment in comments  %}
-        <span>{{comment.author.real_name}} : {{comment.content}} </span> 
+        <span>{{comment.author.real_name}} : {{comment.content}} </span>
         <span><a href="{% url 'blog:post_delete' post.id %} " method="POST">
-            <button>삭제</button>
-        </a></span>
+                <button>삭제</button>
+            </a></span>
         <br>
         {% endfor %}
 
         {% else %}
         <li class="list-group-item mb-1"> No comments yet...</li>
         {% endif %}
-        
-    
+
+
         </ul>
     </div>
 </div>
 
+<script>
+    var mapOptions = {
+        center: new naver.maps.LatLng({{x}}, {{y}}), //위도, 경도, 37.6593699, 127.0236220
+        zoom: 18
+    };
+
+    var map = new naver.maps.Map('map', mapOptions);
+</script>
 
 {% endblock %}
