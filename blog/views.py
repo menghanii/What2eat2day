@@ -28,7 +28,6 @@ def post_detail(request, post_id):
     params = {'query': post.address}
     res = requests.get(url, headers=headers, params=params)
     temp = res.json()
-    print(temp)
     x = temp['addresses'][0]['y']
     y = temp['addresses'][0]['x']
     return render(request, 'blog/post_detail.html', {
