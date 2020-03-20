@@ -28,11 +28,12 @@ def post_detail(request, post_id):
     #       'http'  : '77.75.105.165', 
     #       'https' : '77.75.105.165'
     #     }
+    auth = HTTPProxyAuth('username', 'mypassword')
     url = "https://naveropenapi.apigw.ntruss.com/map-geocode/v2/geocode"
     headers = {'Accept': 'application/json', 'X-NCP-APIGW-API-KEY-ID': 'r1e5o8jg6h', 'X-NCP-APIGW-API-KEY': 'jHsTAMcR2u67EhiqscUtZIkv2qSNnvWATmW1FRUp'}
     params = {'query': post.address}
-    proxies = {'proxies':'127.0.0.1'}
-    res = requests.get(url, headers=headers, params=params, proxies=proxies) #proxies=proxyDict
+    proxies = {'http':'127.0.0.1'}
+    res = requests.get(url, headers=headers, params=params, proxies=proxies, auth=auth) #proxies=proxyDict
     temp = res.json()
     x = temp['addresses'][0]['y']
     y = temp['addresses'][0]['x']
