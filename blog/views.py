@@ -8,7 +8,10 @@ from .models import Post, Comment
 import requests
 import json
 from requests.auth import HTTPProxyAuth
+import os
+import sys
 import urllib.request
+import requests
 # from django.http import JsonResponse, HttpResponseBadRequest
 
 def main_page(request):
@@ -41,26 +44,6 @@ def post_detail(request, post_id):
 
 
 
-    client_id = "NYfX1D8nruuEQC6_20Dk" # 개발자센터에서 발급받은 Client ID 값
-    client_secret = "fN0cDTYHh8" # 개발자센터에서 발급받은 Client Secret 값
-    empty = '바보'
-    encText = urllib.parse.quote(empty)
-    data = "source=en&target=ko&text=" + encText
-    url = "https://openapi.naver.com/v1/papago/n2mt"
-    request = urllib.request.Request(url)
-    request.add_header("X-Naver-Client-Id",client_id)
-    request.add_header("X-Naver-Client-Secret",client_secret)
-    response = urllib.request.urlopen(request, data=data.encode("utf-8"))
-    rescode = response.getcode()
-    if(rescode==200):
-        response_body = response.read()
-        fix2 = response_body.decode('utf-8')
-        fix2 = json.loads(fix2)
-        translated = fix2["message"]["result"]["translatedText"]
-        print()
-        print(translated)
-    else:
-        print("Error Code:" + rescode)
 
     return render(request, 'blog/post_detail.html', {
         'post': post,
