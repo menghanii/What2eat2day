@@ -48,7 +48,7 @@ def post_detail(request, post_id):
     return render(request, 'blog/post_detail.html', {
         'post': post,
         'comments': comments,
-        'translated':translated,
+        # 'translated':translated,
         # 'x':x,
         # 'y':y,
     })
