@@ -31,7 +31,7 @@ def post_detail(request, post_id):
     url = "https://naveropenapi.apigw.ntruss.com/map-geocode/v2/geocode"
     headers = {'Accept': 'application/json', 'X-NCP-APIGW-API-KEY-ID': 'r1e5o8jg6h', 'X-NCP-APIGW-API-KEY': 'jHsTAMcR2u67EhiqscUtZIkv2qSNnvWATmW1FRUp'}
     params = {'query': post.address}
-    proxies = {'proxies':'http://myunghan.pythonanywhere.com/'}
+    proxies = {'proxies':'127.0.0.1'}
     res = requests.get(url, headers=headers, params=params, proxies=proxies) #proxies=proxyDict
     temp = res.json()
     x = temp['addresses'][0]['y']
