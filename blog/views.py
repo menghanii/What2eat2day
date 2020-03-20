@@ -61,13 +61,14 @@ def post_detail(request, post_id):
         print(translated)
     else:
         print("Error Code:" + rescode)
-        
-        return render(request, 'blog/post_detail.html', {
-            'post': post,
-            'comments': comments,
-            # 'x':x,
-            # 'y':y,
-        })
+
+    return render(request, 'blog/post_detail.html', {
+        'post': post,
+        'comments': comments,
+        'translated':translated,
+        # 'x':x,
+        # 'y':y,
+    })
 
 @login_required
 @require_http_methods(['GET', 'POST']) 
