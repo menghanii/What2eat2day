@@ -29,19 +29,19 @@ def post_detail(request, post_id):
     #       'https' : '77.75.105.165'
     #     }
     # auth = HTTPProxyAuth('username', 'mypassword')
-    url = "https://naveropenapi.apigw.ntruss.com/map-geocode/v2/geocode"
-    headers = {'Accept': 'application/json', 'X-NCP-APIGW-API-KEY-ID': 'r1e5o8jg6h', 'X-NCP-APIGW-API-KEY': 'jHsTAMcR2u67EhiqscUtZIkv2qSNnvWATmW1FRUp'}
-    params = {'query': post.address}
+    # url = "https://naveropenapi.apigw.ntruss.com/map-geocode/v2/geocode"
+    # headers = {'Accept': 'application/json', 'X-NCP-APIGW-API-KEY-ID': 'r1e5o8jg6h', 'X-NCP-APIGW-API-KEY': 'jHsTAMcR2u67EhiqscUtZIkv2qSNnvWATmW1FRUp'}
+    # params = {'query': post.address}
     # proxies = {'http':'127.0.0.1'}
-    res = requests.get(url, headers=headers, params=params) #proxies=proxyDict , proxies=proxies, auth=auth
-    temp = res.json()
-    x = temp['addresses'][0]['y']
-    y = temp['addresses'][0]['x']
+    # res = requests.get(url, headers=headers, params=params) #proxies=proxyDict , proxies=proxies, auth=auth
+    # temp = res.json()
+    # x = temp['addresses'][0]['y']
+    # y = temp['addresses'][0]['x']
     return render(request, 'blog/post_detail.html', {
         'post': post,
         'comments': comments,
-        'x':x,
-        'y':y,
+        # 'x':x,
+        # 'y':y,
     })
 
 @login_required
