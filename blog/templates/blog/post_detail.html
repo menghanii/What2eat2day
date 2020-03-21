@@ -2,6 +2,7 @@
 {% block body %}
 <div class="container">
     <div class="post">
+        <h1>{{translated}}</h1>
         <h1>{{ post.title }}</h1>
         <span><a href="{% url 'blog:post_update' post.id %}">
                 <button type="button" class="btn btn-light" style="font-size: 15px; font-weight: bold;">수정</button>
