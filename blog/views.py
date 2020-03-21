@@ -41,6 +41,12 @@ def post_detail(request, post_id):
     # temp = res.json()
     # x = temp['addresses'][0]['y']
     # y = temp['addresses'][0]['x']
+    empty = 'fool'
+    encText = urllib.parse.quote(empty)
+    data = "source=en&target=ko&text=" + encText
+    url = "https://openapi.naver.com/v1/papago/n2mt"
+    request = urllib.request.Request(url)
+    response = urllib.request.urlopen(request, data=data.encode("utf-8"))
 
 
 
