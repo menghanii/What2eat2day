@@ -87,8 +87,8 @@ DATABASES['default'].update(dj_database_url.config(conn_max_age=500))
 
 AWS_ACCESS_KEY_ID = config('AWS_ACCESS_KEY_ID') # .csv 파일에 있는 내용을 입력 Access key ID
 AWS_SECRET_ACCESS_KEY = config('AWS_SECRET_ACCESS_KEY') # .csv 파일에 있는 내용을 입력 Secret access key
-AWS_REGION = 'ap-northeast-2'
-AWS_STORAGE_BUCKET_NAME = 'what2eat2day' # 설정한 이름
+AWS_REGION = config('AWS_REGION')
+AWS_STORAGE_BUCKET_NAME = config('AWS_STORAGE_BUCKET_NAME') # 설정한 이름
 AWS_S3_CUSTOM_DOMAIN = '%s.s3.%s.amazonaws.com' % (AWS_STORAGE_BUCKET_NAME,AWS_REGION)
 AWS_S3_OBJECT_PARAMETERS = {
     'CacheControl': 'max-age=86400',
