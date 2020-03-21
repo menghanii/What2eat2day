@@ -7,12 +7,6 @@ from .forms import PostModelForm, CommentModelForm
 from .models import Post, Comment
 import requests
 import json
-from requests.auth import HTTPProxyAuth
-import os
-import sys
-import urllib.request
-import requests
-# from django.http import JsonResponse, HttpResponseBadRequest
 
 def main_page(request):
     menu_type = request.POST.get('menu')
@@ -28,47 +22,20 @@ def main_page(request):
 def post_detail(request, post_id):
     post = get_object_or_404(Post, id=post_id)
     comments = post.comments.all()
-    # proxyDict = { 
-    #       'http'  : '77.75.105.165', 
-    #       'https' : '77.75.105.165'
-    #     }
-    # auth = HTTPProxyAuth('username', 'mypassword')
-    # url = "https://naveropenapi.apigw.ntruss.com/map-geocode/v2/geocode"
-    # headers = {'Accept': 'application/json', 'X-NCP-APIGW-API-KEY-ID': 'r1e5o8jg6h', 'X-NCP-APIGW-API-KEY': 'jHsTAMcR2u67EhiqscUtZIkv2qSNnvWATmW1FRUp'}
-    # params = {'query': post.address}
-    # proxies = {'http':'127.0.0.1'}
-    # res = requests.get(url, headers=headers, params=params) #proxies=proxyDict , proxies=proxies, auth=auth
-    # temp = res.json()
-    # x = temp['addresses'][0]['y']
-    # y = temp['addresses'][0]['x']
-    empty = 'fool'
-    client_id = "NYfX1D8nruuEQC6_20Dk" # 개발자센터에서 발급받은 Client ID 값
-    client_secret = "fN0cDTYHh8" # 개발자센터에서 발급받은 Client Secret 값
-    encText = urllib.parse.quote(empty)
-    data = "source=en&target=ko&text=" + encText
-    url = "https://openapi.naver.com/v1/papago/n2mt"
-    a_request = urllib.request.Request(url)
-    a_request.add_header("X-Naver-Client-Id",client_id)
-    a_request.add_header("X-Naver-Client-Secret",client_secret)
-    response = urllib.request.urlopen(a_request, data=data.encode("utf-8"))
-    rescode = response.getcode()
-    if(rescode==200):
-        response_body = response.read()
-        fix2 = response_body.decode('utf-8')
-        fix2 = json.loads(fix2)
-        translated = fix2["message"]["result"]["translatedText"]
-        print()
-        print(translated)
-    else:
-        print("Error Code:" + rescode)
 
+    url = "https://naveropenapi.apigw.ntruss.com/map-geocode/v2/geocode"
+    headers = {'Accept': 'application/json', 'X-NCP-APIGW-API-KEY-ID': 'r1e5o8jg6h', 'X-NCP-APIGW-API-KEY': 'jHsTAMcR2u67EhiqscUtZIkv2qSNnvWATmW1FRUp'}
+    params = {'query': post.address}
+    res = requests.get(url, headers=headers, params=params)
+    temp = res.json()
+    x = temp['addresses'][0]['y']
+    y = temp['addresses'][0]['x']
 
     return render(request, 'blog/post_detail.html', {
         'post': post,
         'comments': comments,
-        'translated':translated,
-        # 'x':x,
-        # 'y':y,
+        'x':x,
+        'y':y,
     })
 
 @login_required
