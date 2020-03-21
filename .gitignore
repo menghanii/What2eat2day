@@ -29,7 +29,7 @@ pip-selfcheck.json
 
 ### Images ###
 # JPEG
-# *.jpeg
+*.jpeg
 # *.jpg
 *.jif
 *.jfif
