@@ -29,8 +29,8 @@ pip-selfcheck.json
 
 ### Images ###
 # JPEG
-*.jpeg
-*.jpg
+# *.jpeg
+# *.jpg
 *.jif
 *.jfif
 *.jfi
@@ -49,7 +49,7 @@ pip-selfcheck.json
 *.wdp
 
 # Graphics Interchange Format
-*.gif
+# *.gif
 
 # RAW
 *.raw
