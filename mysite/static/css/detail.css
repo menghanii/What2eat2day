@@ -1,0 +1,29 @@
+.head{
+    text-align: center;
+    font-size: 40px;
+    color: black;
+    font-family: 'Indie Flower';
+}
+
+.posting{
+    text-align: center;
+}
+
+.to_main{
+    font-family: 'Noto Sans KR', sans-serif;
+    
+}
+.text{
+    font-size: 25px;
+    padding-left: 10%;
+    padding-right: 10%;
+    text-justify: auto;
+}
+
+ul{
+    list-style: none;
+}
+
+img{
+    width: 800px;
+}

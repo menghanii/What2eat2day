@@ -1,0 +1,393 @@
+body{
+    border-style: solid;
+    border-width: 8px;
+    border-color: red;
+}
+
+.shadowy{
+    text-shadow: 2px 2px 0px black;
+}
+/* 오늘의 추천맛집  */
+#def{
+    color: red;
+    font-family: 'Black Han Sans';
+}
+
+#topic{
+    color: black;
+    font-family: 'Black Han Sans';
+}
+
+#today{
+    color:red;
+    font-family: 'Black Han Sans';
+}
+
+/* HEADER & TITLE  */
+.header{
+    padding-top: 10px;
+    color: red;
+    text-align: center;
+    font-family: 'Black Han Sans';
+    font-size: 70px;
+}
+
+.header a:link {color: red; text-decoration: none;}
+.header a:visited {color: red; text-decoration: none;}
+.header a:hover {color: red; text-decoration: none;}
+
+.header .title_small{
+    font-size: 45px;
+}
+
+.nav_bar{
+    text-align: center;
+    text-shadow: 1px 1px 0px black;
+    font-size: 20px;
+    font-family: 'Black Han Sans';
+}
+.nav_bar a:link {color: whitesmoke; text-decoration: none;}
+.nav_bar a:visited {color: whitesmoke; text-decoration: none;}
+.nav_bar a:hover {color: whitesmoke; text-decoration: none;}
+
+.middle{
+    color: rgb(94, 255, 224);
+    font-size: 20px;
+}
+
+.small{
+    color: whitesmoke;
+}
+
+@media (min-width: 812px) {
+    .header{
+        padding-top: 20px;
+        color: red;
+        text-align: center;
+        font-family: 'Black Han Sans';
+        font-size: 100px;
+    }
+    
+    .header .title_small{
+        font-size: 70px;
+        }
+}
+
+.logo{
+    text-align: center;
+}
+
+.logo img{
+    width: 200px;
+    height: auto;
+}
+
+.drop{
+    text-align: center;
+}
+
+.dropdown-toggle {
+    background-color: red !important;
+    color: white !important;
+    width: 300px !important;
+    height: 50px !important;
+    font-size: 30px !important;;
+    font-family: 'Black Han Sans';
+}
+
+.dropdown-toggle::after{
+    content: none;
+}
+
+.dropdown-item{
+    color: red !important;
+    width: 300px !important;
+    height: 50px !important;
+    font-size: 30px !important;
+    font-family: 'Black Han Sans';
+    text-align: center !important;
+}
+
+/* CAROUSEL AREA */
+.today{
+    font-size: 40px;
+    text-shadow:
+    -2px -2px 0 yellow,
+    2px -2px 0 yellow,
+    -2px 2px 0 yellow,
+    2px 2px 0 yellow; 
+}
+.issue{
+    font-family: 'Source Code Pro';
+    text-align: center;
+    font-size: 3rem;
+    font-weight: bold;
+    
+    padding-top: 30px;
+}
+
+.car{
+    height: 250px;
+    width: auto;
+}
+.car2{
+    height: 250px;
+    width: auto;
+}
+
+/* CARD AREA(CONTENTS) */
+
+.content{
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.contents{
+    border: 2px solid black;
+    border-radius: 20px;
+    font-family: 'Black Han Sans';
+    text-align: center;
+    font-size: 20px;
+    color: black;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.menubar{
+    text-align: center;
+    font-size: 20px;
+}
+
+.search{
+    padding-left: 20px;
+}
+
+.search button{
+    font-size: 15px;
+    font-weight: bold;
+}
+
+@media (min-width: 812px){
+    .car{
+        height: 400px;
+        width: auto;
+    }
+    .car2{
+        height: 500px;
+        width: auto;
+    }
+    .contents{
+        border: 2px solid black;
+        border-radius: 20px;
+        font-family: 'Black Han Sans';
+        text-align: center;
+        font-size: 40px;
+        color: black;
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+}
+
+#card-col{
+    margin-left: 0.3px;
+    margin-right: 0.3px;
+}
+
+.nopadding{
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+.card-title{
+    font-size: 12px;
+}
+
+.card-img-top{
+    max-width: 500px;
+    height: 100px;
+}
+
+.card_body{
+    padding-bottom: 0 !important;
+}
+
+.date{
+    display: none;
+}
+
+@media (min-width: 812px){
+    #yespadding{
+        margin-left:0px;
+        margin-right: 25px;
+    }
+
+    #card-col{
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+
+    .card-title{
+        font-size: 25px;
+    }
+
+    .card-img-top{
+        max-width: 500px;
+        height: 300px;
+    }
+
+    .date{
+        display: block;
+        color:gray;
+        position: relative;
+    }
+}
+
+/* Footer */
+.page-footer{
+    text-align: center;
+}
+.page-footer a:link {color: whitesmoke; text-decoration: none;}
+.page-footer a:visited {color: whitesmoke; text-decoration: none;}
+.page-footer a:hover {color: whitesmoke; text-decoration: none;}
+
+.git{
+    font-size: 15px;
+}
+@media (min-width: 812px){
+    .git{
+        font-size: 30px;
+    }
+}
+/* login/register */
+
+/* //////POST_DETAIL////// */
+.return{
+    text-align: left;
+    font-size: 10px;
+}
+
+.post{
+    padding-top: 10px;
+    text-align: center;
+}
+
+.post h1{
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.post .post-text{
+    text-align: justify;
+    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 15px;
+}
+.post img{
+    max-width: 350px;
+    height:auto;
+}
+
+input[type="submit"]{
+    background-color: white;
+}
+
+.comment{
+    text-align: center;
+}
+
+@media (min-width: 812px){
+    .return{
+        font-size: 15px;
+    }
+
+    .post img{
+        max-width: 500px;
+        height: auto;
+    }
+
+    .post .post-text{
+        text-align: justify;
+        padding-top: 30px;
+        padding-left: 50px;
+        padding-right: 50px;
+        font-size: 20px;
+    }
+}
+.form-horizontal{
+    margin-top: 5px;
+    margin-left: 50px;
+    margin-bottom: 10px;
+    padding: 20px 20px 0;
+}
+
+.back-to-top{
+    position: fixed;
+    /* position 적용할 위치를 선언해줘야 함 */
+    bottom: 10px;
+    right: 10px;
+}
+#back-to-top{
+    width: 30px;
+    height: 30px;
+    color: white;
+    font-size: 17px;
+    background-color: red;
+    border: 1px solid black;
+}
+
+@media (min-width:812px){
+    .form-horizontal {
+        margin-top: 10px;
+        margin-left: 450px;
+        margin-bottom: 100px;
+        padding: 20px 20px 0;
+      }
+
+    .back-to-top{
+        position: fixed;
+        /* position 적용할 위치를 선언해줘야 함 */
+        bottom: 20px;
+        right: 20px;
+    }
+    #back-to-top{
+        width: 50px;
+        height: 50px;
+        color: white;
+        font-size: 30px;
+        background-color: red;
+        border: 2px solid black;
+    }
+}
+
+/* accounts_detail */
+.articles{
+    padding-top: 20px;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+.article{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+@media (min-width: 812px){  
+    
+    .articles{
+        padding-top: 40px;
+        padding-bottom: 20px;
+    }
+    .article{
+        font-size: 40px;
+        font-weight: bold;
+    }
+
+}
+
+/* #map{
+    margin-top: 5px;
+    margin-left: 500px;
+    margin-bottom: 10px;
+    padding: 20px 20px 0;
+} */
