@@ -11,7 +11,7 @@ urlpatterns = [
     path('<int:post_id>/delete/', views.post_delete, name='post_delete'),
     path('<int:post_id>/comments/create/', views.create_comment, name='create_comment'),
     path('<int:post_id>/comment/<int:comment_id>/delete', views.delete_comment, name='delete_comment'),
-    path('bulletin_1/', views.bulletin_1, name='bulletin_1'),
-    path('bulletin_2/', views.bulletin_2, name='bulletin_2'),
+    path('bulletin_1/', views.bulletin_1, name='bulletin_1'), # '신촌 안' 페이지 url
+    path('bulletin_2/', views.bulletin_2, name='bulletin_2'), # '신촌 밖' 페이지 url
     path('<int:post_id>/like/', views.like, name='like'),
 ]

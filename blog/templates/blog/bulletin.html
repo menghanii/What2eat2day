@@ -23,6 +23,8 @@
     <p class="contents">
         <span>&#x1F437;</span> {{ name }} 맛집을 보여드릴게요 <span>&#x1F437;</span><br>
         {% if name == '신촌' %}
+
+        <!-- '신촌 안' 페이지 radio input 이용-->
         <form action="{% url 'blog:bulletin_1'%}"method="POST">
             {% csrf_token %}
             <div class="menubar">
@@ -72,6 +74,7 @@
 
         {% else %}
 
+        <!-- '신촌 밖' 페이지  radio input 이용-->
         <form action="{% url 'blog:bulletin_2'%}"method="POST">
             {% csrf_token %}
             <div class="menubar">
@@ -123,6 +126,7 @@
     </p>
 </div>
 
+<!-- Card 형식 포스팅-->
 <div class="container-fluid" id="yespadding">
     <div class="row row-cols-3 row-cols-md-4" id="card-col">
         {% for post in posts %}

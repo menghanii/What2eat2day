@@ -1,5 +1,8 @@
 {% extends 'base.html' %}
 {% block body %}
+
+<!-- About Posting -->
+
 <div class="container">
     <div class="post">
         <h1>{{ post.title }}</h1>
@@ -67,10 +70,12 @@
     </div>
 </div>
 
-<!-- Map 관련 code들 (1) Dynamic Web (2) Static Web -->
+<!-- About Map -->
 
+<!-- code (1) Dynamic Web-->
 <div id="map" style="width:80%;height:300px; margin:100px;"></div>
 
+<!-- code (2) Static Web-->
 <img src="https://naveropenapi.apigw.ntruss.com/map-static/v2/raster-cors?w=300&h=300&markers=type:d|size:small|pos:{{y}}%20{{x}}&scale=2&X-NCP-APIGW-API-KEY-ID={{id}}"
     style=margin-left:400px;>
 
@@ -83,7 +88,6 @@
     <form action="{% url 'blog:create_comment' post.id %}" method="POST">
         {% csrf_token %}
         <label for="comment"><strong>{{user.real_name}} 님</strong>, 한줄 평을 남겨보아요~</label>
-        <!-- 코멘트 등록버튼 누르면 등록되게끔 연결좀 시켜주세용 ㅎㅎㅎ-->
         <div class="input-group mb-3">
             <input type="text" class="form-control" name="content" id="comment" placeholder="이곳이 어떠셨나요?" aria-label="후기"
                 aria-describedby="basic-addon2">
@@ -115,6 +119,7 @@
     </div>
 </div>
 
+<!-- (1) Dynamic Web 을 위한 Script-->
 <script>
     var mapOptions = {
         center: new naver.maps.LatLng({{ x }}, {{ y }}), //위도, 경도, 37.6593699, 127.0236220

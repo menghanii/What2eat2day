@@ -1,11 +1,14 @@
+from decouple import config
 import requests
 import json
 
+# Geocoding을 위한 요청 URL (경도, 위도 구하는)
 url = "https://naveropenapi.apigw.ntruss.com/map-geocode/v2/geocode"
-headers = {'Accept': 'application/json', 'X-NCP-APIGW-API-KEY-ID': 'r1e5o8jg6h', 'X-NCP-APIGW-API-KEY': 'jHsTAMcR2u67EhiqscUtZIkv2qSNnvWATmW1FRUp'}
-params = {'query': '서울시 도봉구 방학로15길 40'}
-res = requests.get(url, headers=headers, params=params)
-temp = res.json()
-print(temp)
-print(temp['addresses'][0]['x']) #경도
-print(temp['addresses'][0]['y']) #위도
+
+# Headers에 넣을 꺼 (Accept, SecretKey 2개)
+headers = {'Accept': 'application/json'} 
+headers['X-NCP-APIGW-API-KEY-ID'] = config('X-NCP-APIGW-API-KEY-ID')
+headers['X-NCP-APIGW-API-KEY'] = config('X-NCP-APIGW-API-KEY')
+
+# Post_detail.html에 넘길 SecretKey
+na_id = config('X-NCP-APIGW-API-KEY-ID')

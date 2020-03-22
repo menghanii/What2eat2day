@@ -2,11 +2,14 @@
 
 {% block body %}
 
+<!-- 포스팅 form을 POST 형식으로 보내고 이를 위해 csrf_token이 필요! // django-form에 클래스를 줘서 css 적용!-->
 <form class="form-horizontal" method="POST" enctype="multipart/form-data">
 
 {% csrf_token %}
 
+<!-- p태그 형식으로 form을 사용-->
 {{form.as_p}}
+
 <input type="submit" style="width:75; font-family:돋움; background-color:#eff7f9; border:1 solid #A0DBE4">
 
 </form>
