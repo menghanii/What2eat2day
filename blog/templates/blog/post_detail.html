@@ -67,9 +67,10 @@
     </div>
 </div>
 
+<!-- Map 관련 code들 (1) Dynamic Web (2) Static Web -->
 
 <div id="map" style="width:80%;height:300px; margin:100px;"></div>
-<img src="{{static_map}}">
+
 <img src="https://naveropenapi.apigw.ntruss.com/map-static/v2/raster-cors?w=300&h=300&markers=type:d|size:small|pos:{{y}}%20{{x}}&scale=2&X-NCP-APIGW-API-KEY-ID={{id}}"
     style=margin-left:400px;>
 
@@ -77,6 +78,7 @@
 
 <hr>
 
+<!-- About Comment -->
 <div class="container comment">
     <form action="{% url 'blog:create_comment' post.id %}" method="POST">
         {% csrf_token %}
