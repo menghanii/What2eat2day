@@ -7,6 +7,7 @@ from django.contrib.auth import get_user_model
 from blog.models import Post, Comment
 from .models import User
 
+# 회원가입 코드
 
 @require_http_methods(['GET', 'POST'])
 def signup(request):
