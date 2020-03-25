@@ -7,12 +7,15 @@ from django.contrib.auth import get_user_model
 from blog.models import Post, Comment
 from .models import User
 
-# 회원가입 코드
-
+#---- 회원가입 함수----
 @require_http_methods(['GET', 'POST'])
 def signup(request):
+
+    # 이미 가입이 되었을 경우
     if request.user.is_authenticated:
         return redirect('blog:main_page')
+
+    # 새 가입
     if request.method == 'POST':
         form = CustomUserCreationForm(request.POST)
         if form.is_valid():
@@ -27,9 +30,14 @@ def signup(request):
         'form': form,
     })
 
+
+#---- 로그인 함수----
 def login(request):
+    
+    # 이미 로그인 되어 있을 경우, 메인페이지로 보내기
     if request.user.is_authenticated:
         return redirect('blog:main_page')
+    
     if request.method == 'POST':
         form = CustomAuthenticationForm(request, request.POST)
         if form.is_valid():
@@ -45,16 +53,21 @@ def login(request):
         'form': form,
     })
 
+
+#---- 로그아웃 함수----
+@login_required
 def logout(request):
     auth_logout(request)
     return redirect('blog:main_page')
 
 
+#---- Mypage 함수----
+@login_required
 @require_GET
 def accounts_detail(request, user_id):
     account = get_object_or_404(User, id=user_id)
-    posts = Post.objects.filter(author=account).order_by('-created_date')
-    likes = Post.objects.filter(like_users=account).order_by('-created_date')
+    posts = Post.objects.filter(author=account).order_by('-created_date') # 본인이 올린 게시글 찾기
+    likes = Post.objects.filter(like_users=account).order_by('-created_date') # 본인이 좋아하는 글 찾기
     return render(request, 'accounts/accounts_detail.html', {
         'account':account,
         'posts':posts,

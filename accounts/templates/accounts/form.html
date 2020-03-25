@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
 {% block body %}
+
+<!-- 가입 form & 제출 버튼 // 약간 꾸며주기도 함 // csrf_token 필요-->
 <form class="form-horizontal" method="POST">
     {% csrf_token %}
 

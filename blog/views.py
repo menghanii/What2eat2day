@@ -8,7 +8,7 @@ import requests
 import json
 from .maps import headers, url, na_id
 
-# 첫 화면 페이지 함수
+#---- 첫 화면 페이지 함수 ----
 def main_page(request):
     menu_type = request.POST.get('menu') # 메뉴 별로 볼 수도 있게 가능하게 하기 위해 만들어 놓음.
     posts = Post.objects.all().order_by('-created_date') # 전체 포스팅을 최신 글 순으로 보여주기 위해 만듦.
@@ -20,7 +20,8 @@ def main_page(request):
         'last_post':last_post,
         })
 
-# 각 포스팅 글에 들어갔을 때 함수     
+
+#---- 각 포스팅 글에 들어갔을 때 함수----
 def post_detail(request, post_id):
     post = get_object_or_404(Post, id=post_id) # 각 포스팅 글
     comments = post.comments.all() # 각 포스팅 글에 있는 댓글
@@ -29,14 +30,16 @@ def post_detail(request, post_id):
     params = {'query': post.address}
     res = requests.get(url, headers=headers, params=params)
     temp = res.json()
+
+    # 주소가 검색되는 지 여부 판단! // 검색이 안되면 네이버 본사 위도 경도가 기본 검색 값
     if temp['status'] == 'INVALID_REQUEST':
-        y = 127.1054221
         x = 37.3591614
+        y = 127.1054221
         message = '주소를 찾을 수 없습니다.'
         
     else:
-        x = temp['addresses'][0]['y'] # 경도
-        y = temp['addresses'][0]['x'] # 위도
+        x = temp['addresses'][0]['y'] # 위도
+        y = temp['addresses'][0]['x'] # 경도
         message = 0
         
 
@@ -49,7 +52,7 @@ def post_detail(request, post_id):
         'message':message
     })
 
-# 포스팅 생성 함수
+#---- 포스팅 생성 함수----
 @login_required
 @require_http_methods(['GET', 'POST']) 
 def post_create(request):
@@ -67,7 +70,7 @@ def post_create(request):
         'form':form,
     })
 
-# 포스팅 수정 함수
+#---- 포스팅 수정 함수----
 @login_required 
 @require_http_methods(['GET', 'POST']) 
 def post_update(request, post_id):
@@ -88,7 +91,7 @@ def post_update(request, post_id):
         'form':form,
     })
 
-# 포스팅 삭제 함수
+#---- 포스팅 삭제 함수----
 @login_required
 @require_http_methods(['GET', 'POST']) 
 def post_delete(request, post_id):
@@ -97,7 +100,8 @@ def post_delete(request, post_id):
         post.delete()
     return redirect('blog:main_page')
 
-# 댓글 생성 함수
+
+#---- 댓글 생성 함수----
 @login_required
 @require_POST
 def create_comment(request, post_id):
@@ -113,7 +117,8 @@ def create_comment(request, post_id):
         post.save()
     return redirect('blog:post_detail', post.id)
 
-# 댓글 삭제 함수
+
+#---- 댓글 삭제 함수----
 @login_required
 @require_POST
 def delete_comment(request, post_id, comment_id): # 포스팅 id와 댓글 id가 필요
@@ -128,7 +133,8 @@ def delete_comment(request, post_id, comment_id): # 포스팅 id와 댓글 id가
         # article.save()
     return redirect('blog:post_detail', comment.post.id)
 
-# '신촌 안' 페이지 (a 태그 때문에 request요청에서 value 값을 받아올 수 없었음 // 고로 페이지 관련 함수를 2개 만듦...)
+
+#---- '신촌 안' 페이지 (a 태그 때문에 request요청에서 value 값을 받아올 수 없었음 // 고로 페이지 관련 함수를 2개 만듦...)----
 def bulletin_1(request):
     posts = Post.objects.filter(bulletin='1').order_by('-created_date')
     name = '신촌'
@@ -140,7 +146,8 @@ def bulletin_1(request):
         'posts':posts,
         })
 
-# '신촌 밖' 페이지
+
+#---- '신촌 밖' 페이지----
 def bulletin_2(request):
     posts = Post.objects.filter(bulletin='2').order_by('-created_date')
     name = '신촌 밖'
@@ -152,7 +159,8 @@ def bulletin_2(request):
         'posts':posts,
         })
 
-# 좋아요 기능 구현
+
+#---- 좋아요 기능 구현----
 @login_required
 def like(request, post_id):
     post = get_object_or_404(Post, id=post_id)

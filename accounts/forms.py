@@ -6,10 +6,12 @@ from django import forms
 User = get_user_model()
 
 class CustomUserCreationForm(UserCreationForm):
-    # real_name = forms.CharField(max_length = 20, min_length= 2)
     class Meta:
         model = User
         fields = ('username', 'real_name')
+
+        # 위젯 사용하려고 시도해봄 // 그러나 실패
+
         # widgets = {
         #     'username': forms.TextInput(
         #         attrs={'size': 12, 'class': 'form-control', 'style': 'width: 30%', 'placeholder': '아이디를 적어주세요~'}
