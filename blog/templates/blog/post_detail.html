@@ -71,7 +71,9 @@
 </div>
 
 <!-- About Map -->
-
+{% if message != 0 %}
+<h2>{{message}}</h2>
+{%endif%}
 <!-- code (1) Dynamic Web-->
 <div id="map" style="width:80%;height:300px; margin:100px;"></div>
 

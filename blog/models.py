@@ -35,7 +35,7 @@ class Post(models.Model):
     bulletin = models.CharField(max_length=100, choices=bulletin_types) # 음식점의 위치 별로 포스팅을 불러와야 하기 때문에 필요
     menu = models.CharField(max_length=100, choices=menus) # 음식점의 음식 종류 별로 포스팅을 불러와야 하기 때문에 필요
     like_users = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='like_posts')
-    address = models.CharField(max_length=300) # 네이버 지도 API를 위해 필요
+    address = models.CharField(max_length=300, blank=True) # 네이버 지도 API를 위해 필요
 
     def __str__(self):
         return self.title

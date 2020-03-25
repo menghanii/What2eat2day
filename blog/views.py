@@ -29,8 +29,16 @@ def post_detail(request, post_id):
     params = {'query': post.address}
     res = requests.get(url, headers=headers, params=params)
     temp = res.json()
-    x = temp['addresses'][0]['y'] # 경도
-    y = temp['addresses'][0]['x'] # 위도
+    if temp['status'] == 'INVALID_REQUEST':
+        y = 127.1054221
+        x = 37.3591614
+        message = '주소를 찾을 수 없습니다.'
+        
+    else:
+        x = temp['addresses'][0]['y'] # 경도
+        y = temp['addresses'][0]['x'] # 위도
+        message = 0
+        
 
     return render(request, 'blog/post_detail.html', {
         'post': post,
@@ -38,6 +46,7 @@ def post_detail(request, post_id):
         'x':x,
         'y':y,
         'id':na_id, # 네이버 지도 API _ Secret Key
+        'message':message
     })
 
 # 포스팅 생성 함수
