@@ -30,7 +30,6 @@ def post_detail(request, post_id):
     params = {'query': post.address}
     res = requests.get(url, headers=headers, params=params)
     temp = res.json()
-
     # 주소가 검색되는 지 여부 판단! // 검색이 안되면 네이버 본사 위도 경도가 기본 검색 값
     if temp['status'] == 'INVALID_REQUEST':
         x = 37.3591614

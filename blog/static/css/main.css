@@ -130,9 +130,9 @@ body{
     height: 250px;
     width: auto;
 }
-.car2{
-    height: 250px;
-    width: auto;
+.car2 img{
+    height: 250px !important;
+    width: auto !important;
 }
 
 /* CARD AREA(CONTENTS) */
@@ -172,16 +172,16 @@ body{
         height: 400px;
         width: auto;
     }
-    .car2{
-        height: 500px;
-        width: auto;
+    .car2 img{
+        height: 500px !important;
+        width: auto !important;
     }
     .contents{
         border: 2px solid black;
         border-radius: 20px;
         font-family: 'Black Han Sans';
         text-align: center;
-        font-size: 40px;
+    font-size: 40px;
         color: black;
         padding-top: 30px;
         padding-bottom: 30px;
