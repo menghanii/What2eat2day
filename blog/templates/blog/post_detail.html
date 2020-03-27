@@ -6,6 +6,8 @@
 <div class="container">
     <div class="post">
         <h1>{{ post.title }}</h1>
+    </div>
+    <div class="post-fix">
         <span><a href="{% url 'blog:post_update' post.id %}">
                 <button type="button" class="btn btn-light" style="font-size: 15px; font-weight: bold;">수정</button>
             </a></span>
@@ -26,8 +28,7 @@
                 {% endif%}
 
             </a></span>
-
-        <hr>
+    </div>
         <hr>
 
         <!-- CAROUSEL AREA -->
@@ -75,7 +76,7 @@
 
 <!-- 일단 주소가 검색되는 지 여부를 판단!-->
 {% if message != 0 %}
-<h2>{{message}}</h2>
+<h2 style="text-align: center;">{{message}}</h2>
 {%endif%}
 
 

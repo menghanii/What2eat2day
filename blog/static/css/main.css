@@ -44,14 +44,14 @@ body{
     text-align: center;
     text-shadow: 1px 1px 0px black;
     font-size: 20px;
-    font-family: 'Black Han Sans';
+    font-family: 'Jua';
 }
 .nav_bar a:link {color: whitesmoke; text-decoration: none;}
 .nav_bar a:visited {color: whitesmoke; text-decoration: none;}
 .nav_bar a:hover {color: whitesmoke; text-decoration: none;}
 
 .middle{
-    color: rgb(94, 255, 224);
+    color: greenyellow;
     font-size: 20px;
 }
 
@@ -121,7 +121,7 @@ body{
     font-family: 'Source Code Pro';
     text-align: center;
     font-size: 3rem;
-    font-weight: bold;
+    font-weight: 400;
     
     padding-top: 30px;
 }
@@ -271,12 +271,16 @@ body{
     text-align: center;
 }
 
+.post-fix{
+    text-align: right !important;
+}
+
 .post h1{
     font-size: 30px;
     font-weight: bold;
 }
 
-.post .post-text{
+.post-text{
     text-align: justify;
     padding-top: 10px;
     padding-left: 10px;
@@ -306,7 +310,7 @@ input[type="submit"]{
         height: auto;
     }
 
-    .post .post-text{
+    .post-text{
         text-align: justify;
         padding-top: 30px;
         padding-left: 50px;
