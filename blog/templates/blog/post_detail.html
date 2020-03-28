@@ -84,11 +84,12 @@
 <div id="map" style="width:80%;height:300px; margin:100px;"></div>
 
 <!-- code (2) Static Web-->
-<img src="https://naveropenapi.apigw.ntruss.com/map-static/v2/raster-cors?w=300&h=300&markers=type:d|size:small|pos:{{y}}%20{{x}}&scale=2&X-NCP-APIGW-API-KEY-ID={{id}}"
-    style=margin-left:400px;>
+<!-- <img src="https://naveropenapi.apigw.ntruss.com/map-static/v2/raster-cors?w=300&h=300&markers=type:d|size:small|pos:{{y}}%20{{x}}&scale=2&X-NCP-APIGW-API-KEY-ID={{id}}"
+    style=margin-left:400px;> -->
 
-
-
+<!-- code (3) 길 찾기-->
+<button type="button" class="btn btn-primary"><a href="https://map.naver.com/v5/directions/-/-/-/mode?c=14148843.3405109,4489344.9749045,15,0,0,0,dh" target="_blank"><span
+    style="font-size: 30px">길 찾기</span></a></button>
 <hr>
 
 <!-- About Comment -->
@@ -128,13 +129,54 @@
 </div>
 
 <!-- (1) Dynamic Web 을 위한 Script-->
-<script>
+<!-- <script>
     var mapOptions = {
         center: new naver.maps.LatLng({{ x }}, {{ y }}), //위도, 경도, 37.6593699, 127.0236220
     zoom: 18
     };
 
     var map = new naver.maps.Map('map', mapOptions);
+</script> -->
+
+<script>
+    var HOME_PATH = window.HOME_PATH || '.';
+var place = new naver.maps.LatLng({{x}}, {{y}}),
+    map = new naver.maps.Map('map', {
+        center: place,
+        zoom: 15
+    }),
+    marker = new naver.maps.Marker({
+        map: map,
+        position: place
+    });
+
+var contentString = [
+        '<div class="iw_inner">',
+        '   <h2>{{post.title}}</h2>',
+        '   <p> {{post.address}}',
+        '   </p>',
+        '</div>'
+    ].join('');
+
+var infowindow = new naver.maps.InfoWindow({
+    content: contentString,
+    maxWidth: 140,
+    backgroundColor: "#eee",
+    borderColor: "#2db400",
+    borderWidth: 5,
+    anchorSize: new naver.maps.Size(30, 30),
+    anchorSkew: true,
+    anchorColor: "#eee",
+    pixelOffset: new naver.maps.Point(20, -20)
+});
+
+naver.maps.Event.addListener(marker, "click", function(e) {
+    if (infowindow.getMap()) {
+        infowindow.close();
+    } else {
+        infowindow.open(map, marker);
+    }
+});
 </script>
 
 {% endblock %}
