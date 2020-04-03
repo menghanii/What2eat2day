@@ -12,7 +12,7 @@
 
 ### 서비스 아키텍쳐
 
-<center><img src="./tech.png"></center>
+<center><img src="./tech.PNG"></center>
 
 - Django Web Framework를 기본적으로 사용했습니다.
 - 글 포스팅 시, 데이터들은 Sqlite Database에, 이미지는 Amazon S3 에 업로드 됩니다.
